@@ -61,7 +61,7 @@ namespace HotelManager.pages
         private void reservationDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
           
-                DataTable dt = new DataTable();
+            /*    DataTable dt = new DataTable();
 
                 string billID = reservationDataGridView.CurrentRow.Cells[0].Value.ToString();
                 dt = db.GetData("SELECT * FROM ReservationView WHERE BillID = '" + billID + "'");
@@ -81,8 +81,8 @@ namespace HotelManager.pages
                }else
                {
                 leaveTime = dt.Rows[0].Field<DateTime>("LeaveTime");
-                }      
-               (new ReservationForm(billID, guestID, name, age, address, phoneNumber, roomNumber, arriveTime, leaveTime, EmployeeId,totalmoney)).ShowDialog();
+                }   */   
+               new ReservationForm(reservationDataGridView.CurrentRow.Cells[0].Value.ToString()).ShowDialog();
 
         }
 

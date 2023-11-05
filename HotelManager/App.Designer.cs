@@ -65,10 +65,9 @@
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panelTitleBar.Controls.Add(this.pageTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitleBar.Location = new System.Drawing.Point(300, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(864, 75);
+            this.panelTitleBar.Size = new System.Drawing.Size(1296, 77);
             this.panelTitleBar.TabIndex = 1;
             // 
             // pageTitle
@@ -77,21 +76,22 @@
             this.pageTitle.AutoSize = true;
             this.pageTitle.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pageTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.pageTitle.Location = new System.Drawing.Point(451, 22);
+            this.pageTitle.Location = new System.Drawing.Point(76, 18);
+            this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pageTitle.Name = "pageTitle";
-            this.pageTitle.Size = new System.Drawing.Size(56, 23);
+            this.pageTitle.Size = new System.Drawing.Size(81, 35);
             this.pageTitle.TabIndex = 1;
             this.pageTitle.Text = "Home";
             this.pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pageTitle.Click += new System.EventHandler(this.pageTitle_Click);
             // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.homeLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 149);
+            this.panelLogo.Size = new System.Drawing.Size(300, 229);
             this.panelLogo.TabIndex = 0;
             // 
             // homeLogo
@@ -99,9 +99,8 @@
             this.homeLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.homeLogo.Image = global::HotelManager.Properties.Resources.hotel_logo;
             this.homeLogo.Location = new System.Drawing.Point(0, 0);
-            this.homeLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.homeLogo.Name = "homeLogo";
-            this.homeLogo.Size = new System.Drawing.Size(200, 147);
+            this.homeLogo.Size = new System.Drawing.Size(300, 226);
             this.homeLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.homeLogo.TabIndex = 0;
             this.homeLogo.TabStop = false;
@@ -121,9 +120,8 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 625);
+            this.panelMenu.Size = new System.Drawing.Size(300, 962);
             this.panelMenu.TabIndex = 0;
             // 
             // panel2
@@ -132,10 +130,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.userAuth);
             this.panel2.Font = new System.Drawing.Font("Impact", 10F);
-            this.panel2.Location = new System.Drawing.Point(0, 477);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 734);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 43);
+            this.panel2.Size = new System.Drawing.Size(300, 66);
             this.panel2.TabIndex = 31;
             // 
             // userAuth
@@ -143,10 +140,9 @@
             this.userAuth.AutoSize = true;
             this.userAuth.Font = new System.Drawing.Font("Impact", 10F);
             this.userAuth.ForeColor = System.Drawing.Color.White;
-            this.userAuth.Location = new System.Drawing.Point(23, 13);
-            this.userAuth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.userAuth.Location = new System.Drawing.Point(34, 20);
             this.userAuth.Name = "userAuth";
-            this.userAuth.Size = new System.Drawing.Size(116, 18);
+            this.userAuth.Size = new System.Drawing.Size(166, 25);
             this.userAuth.TabIndex = 0;
             this.userAuth.Text = "Login as lequangvu";
             // 
@@ -156,10 +152,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.displayRealTime);
             this.panel1.Controls.Add(this.displayRealDate);
-            this.panel1.Location = new System.Drawing.Point(0, 518);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 797);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 106);
+            this.panel1.Size = new System.Drawing.Size(300, 163);
             this.panel1.TabIndex = 30;
             // 
             // displayRealTime
@@ -169,9 +164,10 @@
             this.displayRealTime.AutoSize = true;
             this.displayRealTime.Font = new System.Drawing.Font("Impact", 10F);
             this.displayRealTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.displayRealTime.Location = new System.Drawing.Point(53, 54);
+            this.displayRealTime.Location = new System.Drawing.Point(80, 83);
+            this.displayRealTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayRealTime.Name = "displayRealTime";
-            this.displayRealTime.Size = new System.Drawing.Size(0, 18);
+            this.displayRealTime.Size = new System.Drawing.Size(0, 25);
             this.displayRealTime.TabIndex = 2;
             this.displayRealTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -180,9 +176,10 @@
             this.displayRealDate.AutoSize = true;
             this.displayRealDate.Font = new System.Drawing.Font("Impact", 10F);
             this.displayRealDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.displayRealDate.Location = new System.Drawing.Point(23, 14);
+            this.displayRealDate.Location = new System.Drawing.Point(34, 22);
+            this.displayRealDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.displayRealDate.Name = "displayRealDate";
-            this.displayRealDate.Size = new System.Drawing.Size(0, 18);
+            this.displayRealDate.Size = new System.Drawing.Size(0, 25);
             this.displayRealDate.TabIndex = 3;
             this.displayRealDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -199,11 +196,10 @@
             this.LogoutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.LogoutButton.IconSize = 32;
             this.LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutButton.Location = new System.Drawing.Point(0, 425);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LogoutButton.Location = new System.Drawing.Point(0, 655);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.LogoutButton.Size = new System.Drawing.Size(200, 46);
+            this.LogoutButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.LogoutButton.Size = new System.Drawing.Size(300, 71);
             this.LogoutButton.TabIndex = 29;
             this.LogoutButton.Text = "Log out";
             this.LogoutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,11 +219,10 @@
             this.SettingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SettingButton.IconSize = 32;
             this.SettingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingButton.Location = new System.Drawing.Point(0, 379);
-            this.SettingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SettingButton.Location = new System.Drawing.Point(0, 584);
             this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.SettingButton.Size = new System.Drawing.Size(200, 46);
+            this.SettingButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.SettingButton.Size = new System.Drawing.Size(300, 71);
             this.SettingButton.TabIndex = 26;
             this.SettingButton.Text = "Setting";
             this.SettingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,11 +242,10 @@
             this.ReservationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ReservationButton.IconSize = 32;
             this.ReservationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReservationButton.Location = new System.Drawing.Point(0, 333);
-            this.ReservationButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReservationButton.Location = new System.Drawing.Point(0, 513);
             this.ReservationButton.Name = "ReservationButton";
-            this.ReservationButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.ReservationButton.Size = new System.Drawing.Size(200, 46);
+            this.ReservationButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.ReservationButton.Size = new System.Drawing.Size(300, 71);
             this.ReservationButton.TabIndex = 25;
             this.ReservationButton.Text = "Reservation";
             this.ReservationButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,11 +265,10 @@
             this.EmployeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.EmployeesButton.IconSize = 32;
             this.EmployeesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.EmployeesButton.Location = new System.Drawing.Point(0, 287);
-            this.EmployeesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmployeesButton.Location = new System.Drawing.Point(0, 442);
             this.EmployeesButton.Name = "EmployeesButton";
-            this.EmployeesButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.EmployeesButton.Size = new System.Drawing.Size(200, 46);
+            this.EmployeesButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.EmployeesButton.Size = new System.Drawing.Size(300, 71);
             this.EmployeesButton.TabIndex = 24;
             this.EmployeesButton.Text = "Employees";
             this.EmployeesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,11 +289,10 @@
             this.ClientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ClientsButton.IconSize = 32;
             this.ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ClientsButton.Location = new System.Drawing.Point(0, 241);
-            this.ClientsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientsButton.Location = new System.Drawing.Point(0, 371);
             this.ClientsButton.Name = "ClientsButton";
-            this.ClientsButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.ClientsButton.Size = new System.Drawing.Size(200, 46);
+            this.ClientsButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.ClientsButton.Size = new System.Drawing.Size(300, 71);
             this.ClientsButton.TabIndex = 23;
             this.ClientsButton.Text = "Guest";
             this.ClientsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,11 +312,10 @@
             this.RoomsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.RoomsButton.IconSize = 32;
             this.RoomsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RoomsButton.Location = new System.Drawing.Point(0, 195);
-            this.RoomsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RoomsButton.Location = new System.Drawing.Point(0, 300);
             this.RoomsButton.Name = "RoomsButton";
-            this.RoomsButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.RoomsButton.Size = new System.Drawing.Size(200, 46);
+            this.RoomsButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.RoomsButton.Size = new System.Drawing.Size(300, 71);
             this.RoomsButton.TabIndex = 20;
             this.RoomsButton.Text = "Rooms";
             this.RoomsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -344,11 +335,10 @@
             this.DashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DashboardButton.IconSize = 32;
             this.DashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardButton.Location = new System.Drawing.Point(0, 149);
-            this.DashboardButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardButton.Location = new System.Drawing.Point(0, 229);
             this.DashboardButton.Name = "DashboardButton";
-            this.DashboardButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.DashboardButton.Size = new System.Drawing.Size(200, 46);
+            this.DashboardButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
+            this.DashboardButton.Size = new System.Drawing.Size(300, 71);
             this.DashboardButton.TabIndex = 10;
             this.DashboardButton.Text = "Dashboard";
             this.DashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,9 +351,10 @@
             this.panelDestopApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
             this.panelDestopApp.Controls.Add(this.pictureBox1);
             this.panelDestopApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDestopApp.Location = new System.Drawing.Point(200, 75);
+            this.panelDestopApp.Location = new System.Drawing.Point(300, 77);
+            this.panelDestopApp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelDestopApp.Name = "panelDestopApp";
-            this.panelDestopApp.Size = new System.Drawing.Size(864, 550);
+            this.panelDestopApp.Size = new System.Drawing.Size(1296, 885);
             this.panelDestopApp.TabIndex = 2;
             // 
             // pictureBox1
@@ -373,10 +364,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::HotelManager.Properties.Resources.hotel_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 74);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(267, 114);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(466, 362);
+            this.pictureBox1.Size = new System.Drawing.Size(699, 596);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -388,18 +378,17 @@
             // 
             // App
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1064, 625);
+            this.ClientSize = new System.Drawing.Size(1596, 962);
             this.Controls.Add(this.panelDestopApp);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "App";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ROYAL HOTEL";

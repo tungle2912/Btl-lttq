@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Guest));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guestSearchTextBox = new System.Windows.Forms.TextBox();
-            this.guestDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.searchIconButton = new FontAwesome.Sharp.IconButton();
+            this.guestDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.allFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.checkoutFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.checkinFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.addRoomBtn = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guestDataGridView)).BeginInit();
@@ -53,12 +53,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.addRoomBtn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.guestDataGridView);
             this.panel1.Controls.Add(this.allFilterButton);
             this.panel1.Controls.Add(this.checkoutFilterButton);
             this.panel1.Controls.Add(this.checkinFilterButton);
-            this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Location = new System.Drawing.Point(33, 34);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
@@ -94,61 +94,6 @@
             this.guestSearchTextBox.TabIndex = 11;
             this.guestSearchTextBox.TextChanged += new System.EventHandler(this.guestSearchTextBox_TextChanged);
             // 
-            // guestDataGridView
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guestDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guestDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.guestDataGridView.BackgroundColor = System.Drawing.Color.White;
-            this.guestDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.guestDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.guestDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guestDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.guestDataGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guestDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guestDataGridView.DoubleBuffered = true;
-            this.guestDataGridView.EnableHeadersVisualStyles = false;
-            this.guestDataGridView.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.guestDataGridView.HeaderForeColor = System.Drawing.Color.White;
-            this.guestDataGridView.Location = new System.Drawing.Point(30, 205);
-            this.guestDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guestDataGridView.Name = "guestDataGridView";
-            this.guestDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.guestDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guestDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.guestDataGridView.RowHeadersWidth = 51;
-            this.guestDataGridView.RowTemplate.Height = 42;
-            this.guestDataGridView.Size = new System.Drawing.Size(1431, 648);
-            this.guestDataGridView.TabIndex = 11;
-            this.guestDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guestDataGridView_CellClick);
-            // 
             // searchIconButton
             // 
             this.searchIconButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -166,6 +111,61 @@
             this.searchIconButton.TabIndex = 1;
             this.searchIconButton.UseVisualStyleBackColor = true;
             this.searchIconButton.AutoSizeChanged += new System.EventHandler(this.FocusOnClick);
+            // 
+            // guestDataGridView
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guestDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.guestDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guestDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.guestDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.guestDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guestDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.guestDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guestDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.guestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guestDataGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guestDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.guestDataGridView.DoubleBuffered = true;
+            this.guestDataGridView.EnableHeadersVisualStyles = false;
+            this.guestDataGridView.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.guestDataGridView.HeaderForeColor = System.Drawing.Color.White;
+            this.guestDataGridView.Location = new System.Drawing.Point(30, 205);
+            this.guestDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guestDataGridView.Name = "guestDataGridView";
+            this.guestDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.guestDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guestDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.guestDataGridView.RowHeadersWidth = 51;
+            this.guestDataGridView.RowTemplate.Height = 42;
+            this.guestDataGridView.Size = new System.Drawing.Size(1431, 648);
+            this.guestDataGridView.TabIndex = 11;
+            this.guestDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guestDataGridView_CellClick);
             // 
             // allFilterButton
             // 
@@ -245,29 +245,29 @@
             this.checkinFilterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkinFilterButton.Click += new System.EventHandler(this.checkinFilterButton_Click);
             // 
-            // iconButton1
+            // addRoomBtn
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 28;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(1252, 31);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(9, 2, 9, 2);
-            this.iconButton1.Size = new System.Drawing.Size(208, 60);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.Text = "Export Data";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.addRoomBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addRoomBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
+            this.addRoomBtn.FlatAppearance.BorderSize = 0;
+            this.addRoomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addRoomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.addRoomBtn.ForeColor = System.Drawing.Color.White;
+            this.addRoomBtn.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.addRoomBtn.IconColor = System.Drawing.Color.White;
+            this.addRoomBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addRoomBtn.IconSize = 28;
+            this.addRoomBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addRoomBtn.Location = new System.Drawing.Point(1253, 124);
+            this.addRoomBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addRoomBtn.Name = "addRoomBtn";
+            this.addRoomBtn.Padding = new System.Windows.Forms.Padding(9, 3, 9, 3);
+            this.addRoomBtn.Size = new System.Drawing.Size(208, 60);
+            this.addRoomBtn.TabIndex = 14;
+            this.addRoomBtn.Text = "Add Employee";
+            this.addRoomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addRoomBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addRoomBtn.UseVisualStyleBackColor = false;
             // 
             // Guest
             // 
@@ -291,7 +291,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private Bunifu.Framework.UI.BunifuThinButton2 checkoutFilterButton;
         private Bunifu.Framework.UI.BunifuThinButton2 checkinFilterButton;
         private Bunifu.Framework.UI.BunifuCustomDataGrid guestDataGridView;
@@ -299,5 +298,6 @@
         private System.Windows.Forms.TextBox guestSearchTextBox;
         private FontAwesome.Sharp.IconButton searchIconButton;
         private Bunifu.Framework.UI.BunifuThinButton2 allFilterButton;
+        private FontAwesome.Sharp.IconButton addRoomBtn;
     }
 }

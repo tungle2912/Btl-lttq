@@ -265,6 +265,12 @@
     <Compile Include="components\CustomMessageBox.Designer.cs">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="components\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\GuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,17 +283,17 @@
     <Compile Include="components\ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="components\ReservationCheckOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="components\ReservationCheckOut.Designer.cs">
-      <DependentUpon>ReservationCheckOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="components\RoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="components\RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="components\ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="components\Setting\SettingEventVoucher.cs">
       <SubType>Form</SubType>
@@ -300,6 +306,12 @@
     </Compile>
     <Compile Include="components\Setting\SettingUpdateAccount.Designer.cs">
       <DependentUpon>SettingUpdateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\TimekeepingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="components\TimekeepingForm.Designer.cs">
+      <DependentUpon>TimekeepingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\Guest.cs">
       <SubType>Form</SubType>
@@ -364,23 +376,29 @@
     <EmbeddedResource Include="components\CustomMessageBox.resx">
       <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="components\GuestForm.resx">
       <DependentUpon>GuestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="components\ReservationCheckOut.resx">
-      <DependentUpon>ReservationCheckOut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="components\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\Setting\SettingEventVoucher.resx">
       <DependentUpon>SettingEventVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="components\Setting\SettingUpdateAccount.resx">
       <DependentUpon>SettingUpdateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\TimekeepingForm.resx">
+      <DependentUpon>TimekeepingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\Guest.resx">
       <DependentUpon>Guest.cs</DependentUpon>

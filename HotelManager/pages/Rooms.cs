@@ -223,5 +223,10 @@ namespace HotelManager.pages
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            new ServiceForm().ShowDialog();
+        }
     }
 }

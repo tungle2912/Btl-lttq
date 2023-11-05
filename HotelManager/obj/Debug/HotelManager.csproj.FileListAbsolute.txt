@@ -94,7 +94,6 @@ C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Deb
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.csproj.CopyComplete
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\à.exe
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\à.pdb
-C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.components.ReservationCheckOut.resources
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.components.ReservationForm.resources
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\Microsoft.Win32.Registry.xml
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
@@ -184,3 +183,6 @@ C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Deb
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\System.ValueTuple.xml
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\System.Web.Services.Description.pdb
+C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.components.EmployeeForm.resources
+C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.components.ServiceForm.resources
+C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\obj\Debug\HotelManager.components.TimekeepingForm.resources

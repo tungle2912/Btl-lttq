@@ -137,6 +137,9 @@ namespace HotelManager
            displayRealTime.Text = DateTime.Now.ToLongTimeString();
         }
 
-     
+        private void pageTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
