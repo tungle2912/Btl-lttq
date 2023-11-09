@@ -12,7 +12,7 @@ namespace HotelManager.pages
     public partial class Rooms : Form
     {
         public static string rNum;
-
+        DBQuery db = new DBQuery();
         private string activeFilterTab = "ALL";
         private string selectAllCommand = "SELECT SOPHONG AS 'Room Number', TANG AS Floor, LOAIPHONG AS Type, IIF(TINHTRANG=1,N'Đã Thuê',N'Trống') AS Status, GIAPHONG AS Price FROM PHONG";
 
@@ -24,7 +24,6 @@ namespace HotelManager.pages
 
         private void Rooms_Load(object sender, EventArgs e)
         {
-            DBQuery db = new DBQuery();
             DataTable dt = new DataTable();
             DataTable dt1 = new DataTable();
             // Fill data in DataGridView
@@ -41,11 +40,19 @@ namespace HotelManager.pages
             availableRoomButton.ButtonText = $"Available room({dt1.Rows.Count})";
             bookedRoomButton.ButtonText = $"Booked({dt.Rows.Count - dt1.Rows.Count})";
         }   
+        private void updatedata(object sender,FormClosedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.GetData(selectAllCommand);
+            roomDataGridView.DataSource = dt;
+        }
 
 
         private void addRoomBtn_Click(object sender, EventArgs e)
         {
-            (new RoomForm()).ShowDialog();
+            RoomForm a=new RoomForm();
+            a.FormClosed += updatedata;
+            a.ShowDialog();
         }
 
         // ALL ROOM
@@ -127,8 +134,9 @@ namespace HotelManager.pages
             
             int roomStatus = roomDataGridView.CurrentRow.Cells[3].Value.ToString() == "Trống" ? 0 : 1;
             string roomPrice = roomDataGridView.CurrentRow.Cells[4].Value.ToString();
-
-            (new RoomForm(roomNumber, roomFloor, roomType, roomStatus, roomPrice)).ShowDialog();
+            RoomForm a=new RoomForm(roomNumber, roomFloor, roomType, roomStatus, roomPrice);
+            a.FormClosed += updatedata;
+            a.ShowDialog();
         }
         
         private void ActiveFilterRoomButton(object sender)
@@ -158,36 +166,37 @@ namespace HotelManager.pages
 
         private void FocusOnClick(object sender, EventArgs e)
         {
-            roomSearchTextBox.Focus();
+            search();
         }
 
-      
-
-        private void roomSearchTextBox_TextChanged(object sender, EventArgs e)
+        private void search()
         {
             string text = roomSearchTextBox.Text.Trim();
 
             DBQuery db = new DBQuery();
             DataTable dt = new DataTable();
-            
+
             if (text != "")
             {
                 try
                 {
-                    if(activeFilterTab == "ALL")
+                    if (activeFilterTab == "ALL")
                     {
                         dt = db.GetData($"{selectAllCommand} WHERE SOPHONG = {text}");
-                    }else if(activeFilterTab == "AVAILABLE")
+                    }
+                    else if (activeFilterTab == "AVAILABLE")
                     {
                         dt = db.GetData($"{selectAllCommand} WHERE SOPHONG = {text} AND TINHTRANG = 0");
                     }
-                    else if(activeFilterTab == "BOOKED")
+                    else if (activeFilterTab == "BOOKED")
                     {
                         dt = db.GetData($"{selectAllCommand} WHERE SOPHONG = {text} AND TINHTRANG = 1");
                     }
 
                     roomDataGridView.DataSource = dt;
-                }catch(Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     roomDataGridView.DataSource = null;
                     return;
                 }
@@ -219,6 +228,11 @@ namespace HotelManager.pages
             };
         }
 
+        private void roomSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+    
+        }
+
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
@@ -227,6 +241,14 @@ namespace HotelManager.pages
         private void iconButton1_Click(object sender, EventArgs e)
         {
             new ServiceForm().ShowDialog();
+        }
+
+        private void roomSearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                search();
+            }
         }
     }
 }

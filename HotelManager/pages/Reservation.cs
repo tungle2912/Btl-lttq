@@ -32,57 +32,37 @@ namespace HotelManager.pages
 
         }
 
-        private void FocusOnClick(object sender, EventArgs e)
-        {
-            reservationSearchTextBox.Focus();
-        }
+     
 
         private void addGuestButton_Click(object sender, EventArgs e)
         {
-         
-            (new ReservationForm(db.RenderID("select dbo.CreateMaHD()"),db.RenderID("select dbo.CreateMaKH()"))).ShowDialog();
+            ReservationForm a=
+                new ReservationForm(db.RenderID("select dbo.CreateMaHD()"), db.RenderID("select dbo.CreateMaKH()"));  
+            a.FormClosed += restartDataGridView;
+            a.ShowDialog();
         }
     
-    private void Reservation_Load(object sender, EventArgs e)
+        private void Reservation_Load(object sender, EventArgs e)
         {
             allFilterButton.IdleFillColor = Color.SeaGreen;
             allFilterButton.IdleForecolor = Color.White;
-            restartDataGridView();
-        }
-        public void restartDataGridView()
-        {
             DataTable dt = new DataTable();
-
             dt = db.GetData(selectAllCommand);
             reservationDataGridView.DataSource = dt;
         }
-
+        public void restartDataGridView(Object sender, FormClosedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.GetData(selectAllCommand);
+            reservationDataGridView.DataSource = dt;
+        }
+       
         // CELL CLICK 
         private void reservationDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
-            /*    DataTable dt = new DataTable();
-
-                string billID = reservationDataGridView.CurrentRow.Cells[0].Value.ToString();
-                dt = db.GetData("SELECT * FROM ReservationView WHERE BillID = '" + billID + "'");
-                string guestID = dt.Rows[0].Field<string>("GuestID");
-                string name =  dt.Rows[0].Field<string>("Name");
-                int age = dt.Rows[0].Field<int>("Age");
-                string address = dt.Rows[0].Field<string>("Address");
-                string phoneNumber = dt.Rows[0].Field<string>("PhoneNumber");
-                int roomNumber = dt.Rows[0].Field<int>("RoomNumber");
-                string EmployeeId = dt.Rows[0].Field<string>("EmployeeID");
-                string totalmoney = dt.Rows[0].Field<int>("TOTALMONEY").ToString();
-                DateTime arriveTime = (DateTime)reservationDataGridView.CurrentRow.Cells[2].Value;
-                DateTime leaveTime;
-               if (dt.Rows[0]["LeaveTime"] == DBNull.Value)
-               {
-               leaveTime = DateTime.Now;
-               }else
-               {
-                leaveTime = dt.Rows[0].Field<DateTime>("LeaveTime");
-                }   */   
-               new ReservationForm(reservationDataGridView.CurrentRow.Cells[0].Value.ToString()).ShowDialog();
+            ReservationForm a = new ReservationForm(reservationDataGridView.CurrentRow.Cells[0].Value.ToString());
+            a.FormClosed += restartDataGridView;
+            a.ShowDialog();
 
         }
 
@@ -160,6 +140,11 @@ namespace HotelManager.pages
                 reservationDataGridView.DataSource = dt;
             }
             catch (Exception ex) { }
+        }
+
+        private void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

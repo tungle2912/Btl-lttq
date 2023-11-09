@@ -15,7 +15,7 @@ namespace HotelManager.pages
     {
         public static string gID;
 
-        private string selectAllCommand = "SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number' FROM KHACHHANG";
+        private string selectAllCommand = "SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number',SOLANTHUE AS 'Times' FROM KHACHHANG";
         private string activeFilterTab = "ALL";
 
         public Guest()
@@ -33,6 +33,12 @@ namespace HotelManager.pages
             dt = db.GetData(selectAllCommand);
             guestDataGridView.DataSource = dt;
         }
+        private void updatedata(object sender,FormClosedEventArgs e)
+        {
+            DBQuery db = new DBQuery();
+            DataTable dt = new DataTable();
+            dt = db.GetData(selectAllCommand);
+        }
 
         private void FocusOnClick(object sender, EventArgs e)
         {
@@ -49,7 +55,9 @@ namespace HotelManager.pages
                 string age = guestDataGridView.CurrentRow.Cells[2].Value.ToString();
                 string address = guestDataGridView.CurrentRow.Cells[3].Value.ToString();
                 string phoneNumber = guestDataGridView.CurrentRow.Cells[4].Value.ToString();
-                (new GuestForm(guestID, name, age, address, phoneNumber)).ShowDialog();
+                GuestForm a=new GuestForm(guestID, name, age, address, phoneNumber);
+            a.FormClosed += updatedata;
+            a.ShowDialog();
             
         }
 
@@ -62,7 +70,7 @@ namespace HotelManager.pages
             DataTable dt = new DataTable();
             try
             {
-                dt = db.GetData($"{selectAllCommand} JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI >= GETDATE()");
+                dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI >= GETDATE()");
                 guestDataGridView.DataSource = dt;
             }
             catch (Exception ex) { }
@@ -125,8 +133,11 @@ namespace HotelManager.pages
 
         private void guestSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+         
+        }
+        private void search()
+        {
             string text = guestSearchTextBox.Text.Trim();
-
             DBQuery db = new DBQuery();
             DataTable dt = new DataTable();
 
@@ -136,15 +147,15 @@ namespace HotelManager.pages
                 {
                     if (activeFilterTab == "ALL")
                     {
-                        dt = db.GetData(selectAllCommand);
-                    }
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE Name LIKE '%" + text + "%'");
+					}
                     else if (activeFilterTab == "CHECKIN")
                     {
-                        dt = db.GetData($"{selectAllCommand} JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE HOADON.MAKH = '" + text + "' AND NGAYDI >= GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE Name LIKE '%" + text + "%' AND NGAYDI >= GETDATE()");
                     }
                     else if (activeFilterTab == "CHECKOUT")
                     {
-                        dt = db.GetData($"{selectAllCommand} JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE HOADON.MAKH = '" + text + "' AND NGAYDI < GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE  Name LIKE '%" + text + "%' AND NGAYDI < GETDATE()");
                     }
 
                     guestDataGridView.DataSource = dt;
@@ -165,11 +176,11 @@ namespace HotelManager.pages
                     }
                     else if (activeFilterTab == "CHECKIN")
                     {
-                        dt = db.GetData($"{selectAllCommand} JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI >= GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI >= GETDATE()");
                     }
                     else if (activeFilterTab == "CHECKOUT")
                     {
-                        dt = db.GetData($"{selectAllCommand} JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI < GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE NGAYDI < GETDATE()");
                     }
 
                     guestDataGridView.DataSource = dt;
@@ -181,10 +192,22 @@ namespace HotelManager.pages
                 }
             };
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void searchIconButton_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void guestSearchTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                search();
+            }
         }
     }
 }

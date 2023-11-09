@@ -218,7 +218,7 @@ namespace HotelManager.components
                 employeeid = Login.MaNV;
             
             }
-         //    employeeIDTextBox.Text = db.RenderID("select HOTEN FROM NHANVIEN WHERE MANV='"+employeeid+"'") ;    
+            employeeIDTextBox.Text = db.RenderID("select HOTEN FROM NHANVIEN WHERE MANV='"+employeeid+"'") ;    
         }
 
         private void closeReservationFormBtn_Click(object sender, EventArgs e)
