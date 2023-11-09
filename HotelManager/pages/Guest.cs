@@ -147,15 +147,15 @@ namespace HotelManager.pages
                 {
                     if (activeFilterTab == "ALL")
                     {
-                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE Name LIKE '%" + text + "%'");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE HOTEN LIKE '%" + text + "%'");
 					}
                     else if (activeFilterTab == "CHECKIN")
                     {
-                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE Name LIKE '%" + text + "%' AND NGAYDI >= GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE HOTEN LIKE '%" + text + "%' AND NGAYDI >= GETDATE()");
                     }
                     else if (activeFilterTab == "CHECKOUT")
                     {
-                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE  Name LIKE '%" + text + "%' AND NGAYDI < GETDATE()");
+                        dt = db.GetData("SELECT KHACHHANG.MAKH AS 'Guest ID', HOTEN AS 'Name', TUOI AS 'Age', DIACHI AS 'Address', SDT AS 'Phone Number', SOLANTHUE AS 'Times' FROM KHACHHANG JOIN HOADON ON HOADON.MAKH = KHACHHANG.MAKH WHERE  HOTEN LIKE '%" + text + "%' AND NGAYDI < GETDATE()");
                     }
 
                     guestDataGridView.DataSource = dt;

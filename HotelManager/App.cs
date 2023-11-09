@@ -2,7 +2,6 @@
 using HotelManager.pages;
 using System;
 using System.Drawing;
-using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -126,20 +125,34 @@ namespace HotelManager
 
         private void App_Load(object sender, EventArgs e)
         {
-            userAuth.Text = $"Login as {Login.username}";
-            timer.Start();
-            
-        }
+            userAuth.Text = $"{Login.username}";
+            try {
+            avata.Image = Image.FromFile($"{Application.StartupPath}\\image\\{Login.anh}");            
+            }catch(Exception ex)
+            {
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-           displayRealDate.Text = DateTime.Now.ToLongDateString();
-           displayRealTime.Text = DateTime.Now.ToLongTimeString();
-        }
+            }
+		}
 
+     
         private void pageTitle_Click(object sender, EventArgs e)
         {
 
         }
-    }
+
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void userAuth_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panelDestopApp_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+	}
 }

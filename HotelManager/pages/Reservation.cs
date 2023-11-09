@@ -141,10 +141,62 @@ namespace HotelManager.pages
             }
             catch (Exception ex) { }
         }
+		private void search()
+		{
+            string time = bunifuDatepicker1.Value.ToString("yyyy-MM-dd");
 
-        private void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+			DBQuery db = new DBQuery();
+			DataTable dt = new DataTable();
+
+			if (time != null)
+			{
+				try
+				{
+                    dt = db.GetData($"{selectAllCommand} WHERE NGAYDEN='"+time+"' OR NGAYDI ='"+time+"'");
+					reservationDataGridView.DataSource = dt;
+				}
+				catch (Exception ex)
+				{
+					reservationDataGridView.DataSource = null;
+					return;
+				}
+			}
+			else
+			{
+				try
+				{
+					dt = db.GetData($"{selectAllCommand}");
+					reservationDataGridView.DataSource = dt;
+				}
+				catch (Exception ex)
+				{
+					reservationDataGridView.DataSource = null;
+					return;
+				}
+			};
+		}
+
+		private void reservationDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-    }
+
+		private void bunifuDatepicker1_onValueChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void iconButton2_Click(object sender, EventArgs e)
+		{
+			search();
+		}
+
+		private void bunifuDatepicker1_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == (char)Keys.Enter)
+			{
+				search();
+			}
+		}
+	}
 }

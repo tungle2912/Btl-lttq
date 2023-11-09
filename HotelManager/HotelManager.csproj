@@ -453,6 +453,7 @@
     <Content Include="assets\images\logo.ico" />
     <Content Include="assets\images\portugal-flag.gif" />
     <Content Include="assets\images\vietnamese-flag.jpg" />
+    <None Include="bin\Debug\image\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

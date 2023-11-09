@@ -15,7 +15,8 @@ namespace HotelManager.components
     {
         private string currentState="Add";
         private string manv;
-        DBQuery db= new DBQuery();
+		private OpenFileDialog f = new OpenFileDialog();
+		DBQuery db= new DBQuery();
         public EmployeeForm()
         {
             InitializeComponent();
@@ -88,7 +89,9 @@ namespace HotelManager.components
 
         private void guestFormButton_Click(object sender, EventArgs e)
         {
-            if (NameEmployeeTxt.Text.Trim() == "")
+			string[] images = f.FileName.Split('\\');
+			string image = images[images.Length - 1];
+			if (NameEmployeeTxt.Text.Trim() == "")
             {
                 CustomMessageBox c = new CustomMessageBox("error", "Hãy nhập Tên nhân viên");
                 c.ShowDialog();
@@ -116,11 +119,11 @@ namespace HotelManager.components
             }
             if (btnMale.Checked == true)
             {
-                db.MutateData("INSERT INTO NHANVIEN VALUES ('"+EmployeeIdTxt.Text+"',N'"+NameEmployeeTxt.Text+"',dbo.RenderMaChucVu(N'" + PositionCBB.selectedValue.ToString() + "'),N'Nam','"+PhoneNumbertxt.Text+"')");
+                db.MutateData("INSERT INTO NHANVIEN VALUES ('"+EmployeeIdTxt.Text+"',N'"+NameEmployeeTxt.Text+"',dbo.RenderMaChucVu(N'" + PositionCBB.selectedValue.ToString() + "'),N'Nam','"+PhoneNumbertxt.Text+"','"+image+"')");
             }
             else
             {
-                db.MutateData("INSERT INTO NHANVIEN VALUES ('" + EmployeeIdTxt.Text + "',N'" + NameEmployeeTxt.Text + "',dbo.RenderMaChucVu(N'" + PositionCBB.selectedValue.ToString() + "'),N'Nữ','" + PhoneNumbertxt.Text + "')");
+                db.MutateData("INSERT INTO NHANVIEN VALUES ('" + EmployeeIdTxt.Text + "',N'" + NameEmployeeTxt.Text + "',dbo.RenderMaChucVu(N'" + PositionCBB.selectedValue.ToString() + "'),N'Nữ','" + PhoneNumbertxt.Text + "','"+image+"')");
             }
            
         }
@@ -129,5 +132,22 @@ namespace HotelManager.components
         {
             this.Close();
         }
-    }
+
+		private void bunifuThinButton21_Click(object sender, EventArgs e)
+		{		
+			// Thiết lập bộ lọc file
+			f.Filter = "Ảnh (*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            f.FilterIndex = 1;
+			// Hiển thị hộp thoại trọn file
+			if (f.ShowDialog() == DialogResult.OK)
+			{
+				// Tải ảnh về bộ nhớ
+				Image image = Image.FromFile(f.FileName);
+				// Lưu ảnh vào thư mục image của project
+				string fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+                image.Save(Application.StartupPath + "\\image\\" + fileName);
+				pictureBox1.Image = Image.FromFile(f.FileName);
+			}
+		}
+	}
 }

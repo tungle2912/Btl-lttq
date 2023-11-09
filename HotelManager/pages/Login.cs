@@ -10,7 +10,8 @@ namespace HotelManager
     {
         public static string username = "";
         public static string MaNV = "";
-        private string registerUsername, registerPassword;
+		public static string anh = "";
+		private string registerUsername, registerPassword;
         private bool isValidated;
         ValidationHelper validate = new ValidationHelper();
         public Login()
@@ -84,13 +85,14 @@ namespace HotelManager
                 {   
                     DataTable dt = new DataTable();
                     DBQuery db = new DBQuery();
-                    dt = db.GetData("SELECT * FROM USERS WHERE userName = '" + loginUsernameInput.Text + "' and passWord = '" + loginPasswordInput.Text + "'");
+                    dt = db.GetData("SELECT * FROM USERS JOIN NHANVIEN ON NHANVIEN.MANV=USERS.MANV WHERE userName = '" + loginUsernameInput.Text + "' and passWord = '" + loginPasswordInput.Text + "'");
                     
                     if (dt.Rows.Count > 0)
                     {
                         username = loginUsernameInput.Text;
                         MaNV = dt.Rows[0].Field<string>("MaNV");
-                        this.Hide();
+						anh = dt.Rows[0].Field<string>("ANH");
+						this.Hide();
                         App app = new App();
                         app.Show();
                       
