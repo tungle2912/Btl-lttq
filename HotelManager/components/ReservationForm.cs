@@ -1,12 +1,12 @@
 ﻿using Bunifu.Framework.UI;
-using HotelManager.pages;
+
 using HotelManager.utils;
 using System;
-using System.Collections.Generic;
+
 using System.Data;
-using System.Windows.Documents;
+
 using System.Windows.Forms;
-using WindowsFormsControlLibrary1;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace HotelManager.components
 {
@@ -55,7 +55,7 @@ namespace HotelManager.components
             }else {
                 CustomMessageBox a = new CustomMessageBox("Error", "Ngày đi phải sau ngày đến");
                 a.ShowDialog();
-                checkngaydi=false;
+                checkngaydi = false;
                 return;
             }
                 Totallabel.Text = total.ToString();           
@@ -69,22 +69,58 @@ namespace HotelManager.components
             ageTextBox.Text = "";
             addressTextBox.Text = "";
             PhoneNumberTextBox.Text = "";
-            roomNumberCBBox.selectedIndex= 0;
-            ServiceCBBox.selectedIndex= 0;
+            roomNumberCBBox.selectedIndex = 0;
+            ServiceCBBox.selectedIndex = 0;
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
             CustomMessageBox a = new CustomMessageBox("Xác nhận", "Bạn có muốn xóa hóa đơn này ?");
+
             a.ShowDialog();
         }
 
-        private void RoomNumberTextbox_OnValueChanged(object sender, EventArgs e)
-        {
+      
 
-        }
+		private void ExportDataBtn_Click(object sender, EventArgs e)
+		{
+            Excel.Application ExcelApp = new Excel.Application();
+            Excel.Workbook ExcelWorkbook = new Excel.Workbook();
+            Excel.Worksheet ExcelWorksheet = new Excel.Worksheet();
+			// Print in excel file here
+			ExcelWorksheet.Cells[1, 1] = "HÓA ĐƠN THANH TOÁN";
+			ExcelWorksheet.Range[ExcelWorksheet.Cells[1, 1], ExcelWorksheet.Cells[1, 3]].Merge();
+			ExcelWorksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-        public ReservationForm()
+			ExcelWorksheet.Name = "Hóa đơn";
+			
+
+			// Save the Excel file
+
+			// 1. Open save dialog
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+			// 2. File excel displayed
+			saveFileDialog.Filter = "Excel files (*.xls)|*.xls|All files (*.*)|*.*";
+
+			// 3. Filter to get all .xls extension
+			saveFileDialog.FilterIndex = 1;
+
+
+			saveFileDialog.FileName = "HoaDon.xlsx";
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				// 4. Save Dialog
+				ExcelWorkbook.SaveAs(saveFileDialog.FileName);
+			}
+
+
+			// 5. Close
+			ExcelWorkbook.Close();
+			ExcelApp.Quit();
+		}
+
+		public ReservationForm()
         {
             currentState = "ADD";
             InitializeComponent();
@@ -98,7 +134,7 @@ namespace HotelManager.components
             updadedatagrid();*/
         }
 
-        public ReservationForm(string billID,string guestID)
+        public ReservationForm(string billID, string guestID)
         {
             currentState = "ADD";
             this.guestID = guestID;
@@ -163,26 +199,40 @@ namespace HotelManager.components
             string[] a = new string[100];
             int i = 0;
             updadedatagrid();
-            DataTable dt = db.GetData("select SOPHONG FROM PHONG");
-            foreach (DataRow row in dt.Rows)
+            DataTable dt = new DataTable();
+
+            // Kiểm tra hiện thị phòng đã thuê nếu đang ở chế độ update và ngược lại
+			if (currentState == "UPDATE")
+			{
+                dt = db.GetData("select SOPHONG FROM PHONG WHERE TINHTRANG = 1");
+
+            }
+            else
+            {
+                dt = db.GetData("select SOPHONG FROM PHONG WHERE TINHTRANG = 0");
+
+			}
+
+			foreach (DataRow row in dt.Rows)
              {
                     string roomNumber = row["SOPHONG"].ToString();
                     roomNumberCBBox.AddItem(roomNumber);
-                a[i] = roomNumber;
-                i++;
+                    a[i] = roomNumber;
+                    i++;
 
             }
-            DataTable t = db.GetData("select TENDV FROM DICHVU");
+            DataTable t = db.GetData("SELECT TENDV FROM DICHVU");
             foreach (DataRow row in t.Rows)
             {
                 string Service = row["TENDV"].ToString();
                 ServiceCBBox.AddItem(Service);
             }
+
             if (currentState == "UPDATE")
             {
                 updadedatagrid();
                 guestLabel.Text = "UPDATE BILL";
-                AddButton.Text = "Update ";
+                AddButton.Text = "UPDATE";
                 BillIDLabel.Text = billID;
                 guestIDTxt.Text = guestID;
                 nameTextBox.Text = name;
@@ -191,6 +241,7 @@ namespace HotelManager.components
                 addressTextBox.Text = address;
                 PhoneNumberTextBox.Text = phoneNumber; 
                 arriveTimeDatepicker.Value = arriveTime;
+
                 if (checkngaydi)
                 {
                 LeaveTimePicker.Value = leaveTime;
@@ -207,8 +258,7 @@ namespace HotelManager.components
          
                 PriceTextBox.Text = db.RenderID("select dbo.price('"+ roomNumber.ToString() + "')");
                 Totallabel.Text = db.RenderID("select TONGHD from HOADON WHERE MAHD='"+BillIDLabel.Text+"'");
-            }
-            else if(currentState == "ADD"){
+            }else if(currentState == "ADD"){
                 AddButton.Text = "Add ";
                 BillIDLabel.Text = billID;
                 guestIDTxt.Text = guestID;
@@ -278,19 +328,24 @@ namespace HotelManager.components
                 roomNumberCBBox.Focus();
                 return;
             }
+
+
             string arriveTime = arriveTimeDatepicker.Value.ToString("yyyy-MM-dd");
             string leavetime=LeaveTimePicker.Value.ToString("yyyy-MM-dd");
             //check sdt da ton tai chua
             DataTable x = db.GetData("SELECT * FROM KHACHHANG WHERE SDT='" + PhoneNumberTextBox.Text + "'");
+
+          
             if(x.Rows.Count == 0)
             {
-            db.MutateData("INSERT INTO KHACHHANG VALUES(N'"+guestIDTxt.Text+"', N'"+addressTextBox.Text+"', N'"+ageTextBox.Text+"', N'"+ nameTextBox.Text+ "', '"+ PhoneNumberTextBox.Text + "',1)");
+              db.MutateData("INSERT INTO KHACHHANG VALUES(N'"+guestIDTxt.Text+"', N'"+addressTextBox.Text+"', N'"+ageTextBox.Text+"', N'"+ nameTextBox.Text+ "', '"+ PhoneNumberTextBox.Text + "',1)");
             }
             else
             {
                 db.MutateData("UPDATE KHACHANG SET SOLANTHUE+=1 WHERE MAKH=N'" + guestIDTxt.Text + "'");
-                guestIDTxt.Text=db.RenderID("SELECT MAKH FROM KHACHHANG  WHERE SDT='" + PhoneNumberTextBox.Text + "'");
+                guestIDTxt.Text = db.RenderID("SELECT MAKH FROM KHACHHANG  WHERE SDT='" + PhoneNumberTextBox.Text + "'");
             }
+
             //chia 2 truong hop nhap ngay di hoac k
             if (checkngaydi)
             {
@@ -300,6 +355,8 @@ namespace HotelManager.components
             {
                 db.MutateData("INSERT INTO HOADON (MAHD, NGAYDEN, MANV, MAKH) VALUES(N'" + BillIDLabel.Text+"',N'"+arriveTime+"',N'"+Login.MaNV+"',N'"+guestIDTxt.Text+"')");
             }
+
+
             // chia 2 truong hop nhap dich vu hoac k
             if (checkservice)
             {
@@ -325,7 +382,7 @@ namespace HotelManager.components
                 return;
             }
             DataTable x= db.GetData("SELECT * FROM CHITIETHOADON WHERE MAHD=N'" + BillIDLabel.Text + "' AND MADV=dbo.RenderMaDV(N'"+ServiceCBBox.selectedValue.ToString()+"')");
-            if (x.Rows.Count ==0)
+            if (x.Rows.Count == 0)
             {
                 db.MutateData("INSERT INTO CHITIETHOADON (MACTHD, MAHD, MADV, SOPHONG,GIAPHONG, GIADV) VALUES( dbo.CreateMaCTHD(),'" + BillIDLabel.Text + "',dbo.RenderMaDV(N'" + ServiceCBBox.selectedValue.ToString() + "'),'" +roomNumber + "','" + PriceTextBox.Text + "','" + PriceServiceTextbox.Text + "')");
                 updadedatagrid();

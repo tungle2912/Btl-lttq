@@ -228,15 +228,7 @@ namespace HotelManager.pages
             };
         }
 
-        private void roomSearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         private void iconButton1_Click(object sender, EventArgs e)
         {

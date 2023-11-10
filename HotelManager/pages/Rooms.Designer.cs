@@ -88,7 +88,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1641, 961);
             this.panel7.TabIndex = 3;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+
             // 
             // iconButton1
             // 
@@ -275,7 +275,6 @@
             this.roomSearchTextBox.Name = "roomSearchTextBox";
             this.roomSearchTextBox.Size = new System.Drawing.Size(496, 28);
             this.roomSearchTextBox.TabIndex = 11;
-            this.roomSearchTextBox.TextChanged += new System.EventHandler(this.roomSearchTextBox_TextChanged);
             this.roomSearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomSearchTextBox_KeyPress);
             // 
             // searchIconButton

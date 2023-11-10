@@ -6,7 +6,7 @@ namespace HotelManager.utils
 {
     internal class DBQuery
     {
-        private string dataSource = "Data Source=LAPTOP-1SOFRQ1F\\TUNGLE;Initial Catalog=QLKS;Integrated Security=True";
+        private string dataSource = "Data Source=LAPTOP-DS6Q9BBO\\SQLEXPRESS;Initial Catalog=QLKS;Integrated Security=True";
         SqlConnection connection = null;
 
         public void OpenConnection()
