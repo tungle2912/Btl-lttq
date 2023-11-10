@@ -140,6 +140,9 @@ namespace HotelManager.pages
             chart1.DataBind();
         }
 
+		private void lbPTTR_Click(object sender, EventArgs e)
+		{
 
+		}
 	}
 }
