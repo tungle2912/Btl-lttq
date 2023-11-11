@@ -153,9 +153,7 @@ namespace HotelManager.components
         private void updadedatagrid()
         {
             ServiceDataGrid.DataSource = db.GetData("SELECT MADV,TENDV,GIA FROM ServiceView WHERE MAHD = N'" + billID + "'");
-            ServiceDataGrid.Columns[0].Width = 200;
-            ServiceDataGrid.Columns[1].Width = 480;
-            ServiceDataGrid.Columns[2].Width = 200;
+         
         }
 
         private void ReservationForm_Load(object sender, EventArgs e)
@@ -163,7 +161,7 @@ namespace HotelManager.components
             string[] a = new string[100];
             int i = 0;
             updadedatagrid();
-            DataTable dt = db.GetData("select SOPHONG FROM PHONG");
+            DataTable dt = db.GetData("select SOPHONG FROM PHONG WHERE TINHTRANG=0");
             foreach (DataRow row in dt.Rows)
              {
                     string roomNumber = row["SOPHONG"].ToString();
@@ -218,7 +216,7 @@ namespace HotelManager.components
                 employeeid = Login.MaNV;
             
             }
-            employeeIDTextBox.Text = db.RenderID("select HOTEN FROM NHANVIEN WHERE MANV='"+employeeid+"'") ;    
+        //    employeeIDTextBox.Text = db.RenderID("select HOTEN FROM NHANVIEN WHERE MANV='"+employeeid+"'") ;    
         }
 
         private void closeReservationFormBtn_Click(object sender, EventArgs e)

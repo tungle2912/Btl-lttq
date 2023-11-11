@@ -446,11 +446,14 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="assets\images\america-flag.png" />
+    <None Include="assets\images\customer.png" />
     <Content Include="assets\images\germany-flag.png" />
     <Content Include="assets\images\hotel-logo.png" />
+    <None Include="assets\images\increase.png" />
     <Content Include="assets\images\japan-flag.png" />
     <Content Include="assets\images\korean-flag.png" />
     <Content Include="assets\images\logo.ico" />
+    <None Include="assets\images\margin.png" />
     <Content Include="assets\images\portugal-flag.gif" />
     <Content Include="assets\images\vietnamese-flag.jpg" />
     <None Include="bin\Debug\image\1.jpg" />

@@ -125,7 +125,7 @@
 			this.guestDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.guestDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
 			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
 			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
@@ -145,7 +145,7 @@
 			this.guestDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
 			this.guestDataGridView.DoubleBuffered = true;
 			this.guestDataGridView.EnableHeadersVisualStyles = false;
-			this.guestDataGridView.HeaderBgColor = System.Drawing.Color.SeaGreen;
+			this.guestDataGridView.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
 			this.guestDataGridView.HeaderForeColor = System.Drawing.Color.White;
 			this.guestDataGridView.Location = new System.Drawing.Point(30, 205);
 			this.guestDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

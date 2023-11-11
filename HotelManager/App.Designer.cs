@@ -34,7 +34,9 @@
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.homeLogo = new System.Windows.Forms.PictureBox();
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.avata = new System.Windows.Forms.PictureBox();
 			this.userAuth = new System.Windows.Forms.Label();
 			this.LogoutButton = new FontAwesome.Sharp.IconButton();
 			this.SettingButton = new FontAwesome.Sharp.IconButton();
@@ -45,16 +47,14 @@
 			this.DashboardButton = new FontAwesome.Sharp.IconButton();
 			this.panelDestopApp = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.avata = new System.Windows.Forms.PictureBox();
-			this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
 			this.panelTitleBar.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.homeLogo)).BeginInit();
 			this.panelMenu.SuspendLayout();
 			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.avata)).BeginInit();
 			this.panelDestopApp.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.avata)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelTitleBar
@@ -73,7 +73,7 @@
 			this.pageTitle.AutoSize = true;
 			this.pageTitle.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.pageTitle.ForeColor = System.Drawing.Color.Gainsboro;
-			this.pageTitle.Location = new System.Drawing.Point(76, 18);
+			this.pageTitle.Location = new System.Drawing.Point(583, 19);
 			this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.pageTitle.Name = "pageTitle";
 			this.pageTitle.Size = new System.Drawing.Size(81, 35);
@@ -121,6 +121,18 @@
 			this.panelMenu.Size = new System.Drawing.Size(300, 962);
 			this.panelMenu.TabIndex = 0;
 			// 
+			// bunifuCustomLabel1
+			// 
+			this.bunifuCustomLabel1.AutoSize = true;
+			this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
+			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 789);
+			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(66, 25);
+			this.bunifuCustomLabel1.TabIndex = 32;
+			this.bunifuCustomLabel1.Text = "Profile";
+			// 
 			// panel2
 			// 
 			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -132,6 +144,16 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(297, 66);
 			this.panel2.TabIndex = 31;
+			// 
+			// avata
+			// 
+			this.avata.Image = global::HotelManager.Properties.Resources._1;
+			this.avata.Location = new System.Drawing.Point(0, 0);
+			this.avata.Name = "avata";
+			this.avata.Size = new System.Drawing.Size(88, 66);
+			this.avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.avata.TabIndex = 32;
+			this.avata.TabStop = false;
 			// 
 			// userAuth
 			// 
@@ -335,28 +357,6 @@
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
-			// avata
-			// 
-			this.avata.Image = global::HotelManager.Properties.Resources._1;
-			this.avata.Location = new System.Drawing.Point(0, 0);
-			this.avata.Name = "avata";
-			this.avata.Size = new System.Drawing.Size(88, 66);
-			this.avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.avata.TabIndex = 32;
-			this.avata.TabStop = false;
-			// 
-			// bunifuCustomLabel1
-			// 
-			this.bunifuCustomLabel1.AutoSize = true;
-			this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 789);
-			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-			this.bunifuCustomLabel1.Size = new System.Drawing.Size(66, 25);
-			this.bunifuCustomLabel1.TabIndex = 32;
-			this.bunifuCustomLabel1.Text = "Profile";
-			// 
 			// App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -383,9 +383,9 @@
 			this.panelMenu.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.avata)).EndInit();
 			this.panelDestopApp.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.avata)).EndInit();
 			this.ResumeLayout(false);
 
         }

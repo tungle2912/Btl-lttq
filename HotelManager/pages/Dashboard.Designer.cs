@@ -41,9 +41,8 @@
 			this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
 			this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.btnCM = new System.Windows.Forms.Button();
-			this.dtpNgay = new System.Windows.Forms.DateTimePicker();
+			this.dtpNgay = new Bunifu.Framework.UI.BunifuDatepicker();
+			this.ExportDataBtn = new FontAwesome.Sharp.IconButton();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.lbPTNB = new System.Windows.Forms.Label();
@@ -60,6 +59,11 @@
 			this.lbTotalReven = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.labelemployeesalary = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.panel6 = new System.Windows.Forms.Panel();
@@ -72,8 +76,8 @@
 			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
 			this.label9 = new System.Windows.Forms.Label();
-			this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.ExportDataBtn = new FontAwesome.Sharp.IconButton();
+			this.datahoadon = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.labeltotalprofit = new System.Windows.Forms.Label();
 			this.panel4.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,10 +86,12 @@
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel5.SuspendLayout();
+			this.panel7.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
 			this.panel6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.datahoadon)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// elementHost1
@@ -103,44 +109,54 @@
 			// 
 			this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel4.Controls.Add(this.ExportDataBtn);
-			this.panel4.Controls.Add(this.button1);
-			this.panel4.Controls.Add(this.btnCM);
 			this.panel4.Controls.Add(this.dtpNgay);
+			this.panel4.Controls.Add(this.ExportDataBtn);
 			this.panel4.Location = new System.Drawing.Point(0, 3);
 			this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(1726, 77);
 			this.panel4.TabIndex = 16;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(888, 25);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(140, 32);
-			this.button1.TabIndex = 14;
-			this.button1.Text = "CheckYear";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// btnCM
-			// 
-			this.btnCM.Location = new System.Drawing.Point(717, 25);
-			this.btnCM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.btnCM.Name = "btnCM";
-			this.btnCM.Size = new System.Drawing.Size(140, 32);
-			this.btnCM.TabIndex = 12;
-			this.btnCM.Text = "CheckMonth";
-			this.btnCM.UseVisualStyleBackColor = true;
+			this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
 			// 
 			// dtpNgay
 			// 
-			this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpNgay.Location = new System.Drawing.Point(89, 26);
+			this.dtpNgay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
+			this.dtpNgay.BorderRadius = 0;
+			this.dtpNgay.ForeColor = System.Drawing.Color.White;
+			this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+			this.dtpNgay.FormatCustom = null;
+			this.dtpNgay.Location = new System.Drawing.Point(26, 5);
 			this.dtpNgay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.dtpNgay.Name = "dtpNgay";
-			this.dtpNgay.Size = new System.Drawing.Size(223, 26);
-			this.dtpNgay.TabIndex = 0;
+			this.dtpNgay.Size = new System.Drawing.Size(420, 60);
+			this.dtpNgay.TabIndex = 156;
+			this.dtpNgay.Value = new System.DateTime(2023, 11, 8, 14, 52, 17, 840);
+			this.dtpNgay.onValueChanged += new System.EventHandler(this.dtpNgay_onValueChanged);
+			// 
+			// ExportDataBtn
+			// 
+			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
+			this.ExportDataBtn.Enabled = false;
+			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
+			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ExportDataBtn.IconSize = 28;
+			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ExportDataBtn.Location = new System.Drawing.Point(1536, 11);
+			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ExportDataBtn.Name = "ExportDataBtn";
+			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(9, 3, 9, 3);
+			this.ExportDataBtn.Size = new System.Drawing.Size(177, 57);
+			this.ExportDataBtn.TabIndex = 155;
+			this.ExportDataBtn.Text = "Export Data";
+			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.ExportDataBtn.UseVisualStyleBackColor = false;
 			// 
 			// panel1
 			// 
@@ -152,11 +168,12 @@
 			this.panel1.Location = new System.Drawing.Point(25, 87);
 			this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(466, 81);
+			this.panel1.Size = new System.Drawing.Size(421, 81);
 			this.panel1.TabIndex = 17;
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Image = global::HotelManager.Properties.Resources.customer;
 			this.pictureBox1.Location = new System.Drawing.Point(6, 5);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pictureBox1.Name = "pictureBox1";
@@ -205,6 +222,7 @@
 			// 
 			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+			this.panel3.Controls.Add(this.labeltotalprofit);
 			this.panel3.Controls.Add(this.pictureBox3);
 			this.panel3.Controls.Add(this.lbPTTP);
 			this.panel3.Controls.Add(this.lbTotaP);
@@ -217,6 +235,7 @@
 			// 
 			// pictureBox3
 			// 
+			this.pictureBox3.Image = global::HotelManager.Properties.Resources.increase;
 			this.pictureBox3.Location = new System.Drawing.Point(4, 7);
 			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pictureBox3.Name = "pictureBox3";
@@ -272,14 +291,15 @@
 			this.panel2.Controls.Add(this.lbPTTR);
 			this.panel2.Controls.Add(this.lbTotalReven);
 			this.panel2.Controls.Add(this.label5);
-			this.panel2.Location = new System.Drawing.Point(499, 0);
+			this.panel2.Location = new System.Drawing.Point(454, 0);
 			this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(841, 80);
+			this.panel2.Size = new System.Drawing.Size(476, 80);
 			this.panel2.TabIndex = 19;
 			// 
 			// pictureBox2
 			// 
+			this.pictureBox2.Image = global::HotelManager.Properties.Resources.margin;
 			this.pictureBox2.Location = new System.Drawing.Point(9, 5);
 			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.pictureBox2.Name = "pictureBox2";
@@ -293,7 +313,7 @@
 			this.lbPTTR.AutoSize = true;
 			this.lbPTTR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbPTTR.ForeColor = System.Drawing.Color.LimeGreen;
-			this.lbPTTR.Location = new System.Drawing.Point(431, 28);
+			this.lbPTTR.Location = new System.Drawing.Point(329, 29);
 			this.lbPTTR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbPTTR.Name = "lbPTTR";
 			this.lbPTTR.Size = new System.Drawing.Size(75, 29);
@@ -307,7 +327,7 @@
 			this.lbTotalReven.AutoSize = true;
 			this.lbTotalReven.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalReven.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.lbTotalReven.Location = new System.Drawing.Point(116, 48);
+			this.lbTotalReven.Location = new System.Drawing.Point(141, 47);
 			this.lbTotalReven.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbTotalReven.Name = "lbTotalReven";
 			this.lbTotalReven.Size = new System.Drawing.Size(65, 29);
@@ -320,7 +340,7 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.Gray;
-			this.label5.Location = new System.Drawing.Point(117, 14);
+			this.label5.Location = new System.Drawing.Point(141, 13);
 			this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(139, 25);
@@ -332,12 +352,75 @@
 			// 
 			this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel5.Controls.Add(this.panel7);
 			this.panel5.Controls.Add(this.panel2);
 			this.panel5.Controls.Add(this.panel3);
 			this.panel5.Location = new System.Drawing.Point(0, 88);
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(1726, 95);
 			this.panel5.TabIndex = 20;
+			// 
+			// panel7
+			// 
+			this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+			this.panel7.Controls.Add(this.pictureBox4);
+			this.panel7.Controls.Add(this.label1);
+			this.panel7.Controls.Add(this.labelemployeesalary);
+			this.panel7.Controls.Add(this.label4);
+			this.panel7.Location = new System.Drawing.Point(938, -1);
+			this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(402, 81);
+			this.panel7.TabIndex = 20;
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Image = global::HotelManager.Properties.Resources.customer;
+			this.pictureBox4.Location = new System.Drawing.Point(11, 5);
+			this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(88, 74);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 10;
+			this.pictureBox4.TabStop = false;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.LightGreen;
+			this.label1.Location = new System.Drawing.Point(308, 30);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(75, 29);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "+15%";
+			// 
+			// labelemployeesalary
+			// 
+			this.labelemployeesalary.AutoSize = true;
+			this.labelemployeesalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelemployeesalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.labelemployeesalary.Location = new System.Drawing.Point(103, 48);
+			this.labelemployeesalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labelemployeesalary.Name = "labelemployeesalary";
+			this.labelemployeesalary.Size = new System.Drawing.Size(65, 29);
+			this.labelemployeesalary.TabIndex = 5;
+			this.labelemployeesalary.Text = "1000";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.ForeColor = System.Drawing.Color.Gray;
+			this.label4.Location = new System.Drawing.Point(104, 14);
+			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(154, 25);
+			this.label4.TabIndex = 5;
+			this.label4.Text = "employee salary";
 			// 
 			// chart1
 			// 
@@ -600,61 +683,49 @@
 			this.label9.TabIndex = 6;
 			this.label9.Text = "Total Counter";
 			// 
-			// bunifuCustomDataGrid1
+			// datahoadon
 			// 
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-			this.bunifuCustomDataGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.datahoadon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			this.datahoadon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-			this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.datahoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.datahoadon.BackgroundColor = System.Drawing.Color.Gainsboro;
+			this.datahoadon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.datahoadon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-			this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.bunifuCustomDataGrid1.DoubleBuffered = true;
-			this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-			this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-			this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-			this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(380, 593);
-			this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-			this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			this.bunifuCustomDataGrid1.RowHeadersWidth = 62;
-			this.bunifuCustomDataGrid1.RowTemplate.Height = 28;
-			this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1333, 299);
-			this.bunifuCustomDataGrid1.TabIndex = 24;
+			this.datahoadon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			this.datahoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.datahoadon.DoubleBuffered = true;
+			this.datahoadon.EnableHeadersVisualStyles = false;
+			this.datahoadon.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+			this.datahoadon.HeaderForeColor = System.Drawing.Color.White;
+			this.datahoadon.Location = new System.Drawing.Point(380, 593);
+			this.datahoadon.Name = "datahoadon";
+			this.datahoadon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.datahoadon.RowHeadersWidth = 62;
+			this.datahoadon.RowTemplate.Height = 28;
+			this.datahoadon.Size = new System.Drawing.Size(1333, 299);
+			this.datahoadon.TabIndex = 24;
 			// 
-			// ExportDataBtn
+			// labeltotalprofit
 			// 
-			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
-			this.ExportDataBtn.Enabled = false;
-			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
-			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.ExportDataBtn.IconSize = 28;
-			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.Location = new System.Drawing.Point(1536, 15);
-			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.ExportDataBtn.Name = "ExportDataBtn";
-			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(9, 3, 9, 3);
-			this.ExportDataBtn.Size = new System.Drawing.Size(177, 42);
-			this.ExportDataBtn.TabIndex = 155;
-			this.ExportDataBtn.Text = "Export Data";
-			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.ExportDataBtn.UseVisualStyleBackColor = false;
+			this.labeltotalprofit.AutoSize = true;
+			this.labeltotalprofit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labeltotalprofit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.labeltotalprofit.Location = new System.Drawing.Point(115, 44);
+			this.labeltotalprofit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labeltotalprofit.Name = "labeltotalprofit";
+			this.labeltotalprofit.Size = new System.Drawing.Size(65, 29);
+			this.labeltotalprofit.TabIndex = 13;
+			this.labeltotalprofit.Text = "1000";
 			// 
 			// Dashboard
 			// 
@@ -662,7 +733,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.ClientSize = new System.Drawing.Size(1726, 939);
-			this.Controls.Add(this.bunifuCustomDataGrid1);
+			this.Controls.Add(this.datahoadon);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel6);
 			this.Controls.Add(this.chart2);
@@ -684,11 +755,14 @@
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel5.ResumeLayout(false);
+			this.panel7.ResumeLayout(false);
+			this.panel7.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.datahoadon)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -697,9 +771,6 @@
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.CartesianChart cartesianChart1;
 		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button btnCM;
-		private System.Windows.Forms.DateTimePicker dtpNgay;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel2;
@@ -728,7 +799,14 @@
 		private FontAwesome.Sharp.IconButton iconButton2;
 		private FontAwesome.Sharp.IconButton iconButton1;
 		private System.Windows.Forms.Label label9;
-		private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+		private Bunifu.Framework.UI.BunifuCustomDataGrid datahoadon;
 		private FontAwesome.Sharp.IconButton ExportDataBtn;
+		private Bunifu.Framework.UI.BunifuDatepicker dtpNgay;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label labelemployeesalary;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label labeltotalprofit;
 	}
 }

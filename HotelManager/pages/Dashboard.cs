@@ -46,35 +46,64 @@ namespace HotelManager.pages
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-       /*     System.Data.DataTable dt = pro.GetData("select * from LUONG ");
-            dgvLuong.DataSource = dt;
-            dgvLuong.Columns[0].HeaderText = "Mã Nhân Viên";
-            dgvLuong.Columns[1].HeaderText = "Tháng";
-            dgvLuong.Columns[2].HeaderText = "Năm";
-            dgvLuong.Columns[3].HeaderText = "lượng";
+            // hiển thị hóa đơn trong tháng này
+            System.Data.DataTable dt = pro.GetData("SELECT " +
+				"MAHD AS N'Bill ID', " +
+				"MAKH AS N'Guest ID', " +
+				"NGAYDEN AS 'Arrive Time', " +
+				"NGAYDI AS 'Leave Time', " +
+				"THOIGIANTHUE AS N'Rental period'," +
+				"TONGHD AS N'Total '" +
+				"FROM HOADON where YEAR(NGAYDI)=YEAR(getdate()) AND MONTH(NGAYDI)=MONTH(getdate())");
+            datahoadon.DataSource= dt;
 
-            dt = pro.GetData("select count(*) as sophong from PHONG");
+            dt = pro.GetData("select * from totalcounter");
             lbTotalRoom.Text = dt.Rows[0]["sophong"].ToString();
-            dt = pro.GetData("select count(*) as sophong from PHONG where TINHTRANG=1");
-            lbTotalAvaliable.Text = dt.Rows[0]["sophong"].ToString();
-            dt = pro.GetData("select count(*) as sophong from PHONG where TINHTRANG=0");
-            lbTotalBooked.Text = dt.Rows[0]["sophong"].ToString();
-            dt = pro.GetData("select count(*) as NhanVien from NHANVIEN");
+            lbTotalAvaliable.Text = dt.Rows[0]["sophong_available"].ToString();
+            lbTotalBooked.Text = dt.Rows[0]["sophong_booked"].ToString();
             lbTotalstaff.Text = dt.Rows[0]["NhanVien"].ToString();
+            //hiển thị top5 khach hang
+            dt = pro.GetData("select * from top5khachhang");
+            chart2.Series["Series1"].Points.DataBind(dt.AsEnumerable(), "HOTEN", "SoLanDen", "");
 
-            dt = pro.GetData("SELECT top 5  KHACHHANG.HOTEN, COUNT(HOADON.MAKH) AS SoLanDen" +
-                "\r\nFROM KHACHHANG\r\nLEFT JOIN HOADON ON KHACHHANG.MAKH = HOADON.MAKH" +
-                "\r\nGROUP BY KHACHHANG.MAKH, KHACHHANG.HOTEN\r\nORDER BY SoLanDen DESC");
-            chart2.Series["Series1"].Points.DataBind(dt.AsEnumerable(), "HOTEN", "SoLanDen", "");*/
-        }
+            //hiển thị luong nhan vien
+            labelemployeesalary.Text = pro.RenderID("select dbo.LUONGF(year(getdate()),month(getdate()))");
+            lbTotalReven.Text= pro.RenderID("select dbo.DOANHTHUF(year(getdate()),month(getdate()))");
+            lbNBO.Text = pro.RenderID("select dbo.NUMBERORDER(year(getdate()),month(getdate()))");
+            labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
 
-        private void btnKTNgay_Click(object sender, EventArgs e)
-        {
-            System.Data.DataTable dt = pro.GetData($"select count(*) as SoOder from HOADON Where NGAYDEN = '{dtpNgay.Value.ToString("yyyy-MM-dd")}'");
-            lbNBO.Text = dt.Rows[0]["SoOder"].ToString();
-            dt = pro.GetData($"select sum(TONGHD) as TongTien from HOADON Where NGAYDEN = '{dtpNgay.Value.ToString("yyyy-MM-dd")}'");
-            lbTotalReven.Text = dt.Rows[0]["TongTien"].ToString();
-        }
+			dt = pro.GetData("select * from LOINHUANNAM(year(getdate()))");
+			chart1.DataSource = dt;
+			chart1.Series["Series1"].XValueMember = "THANG";
+			chart1.Series["Series1"].YValueMembers = "LOINHUAN_USD";
+			chart1.DataBind();
+		}
+		private void dtpNgay_onValueChanged(object sender, EventArgs e)
+		{
+            System.Data.DataTable dt = pro.GetData("SELECT " +
+             "MAHD AS N'Bill ID', " +
+             "MAKH AS N'Guest ID', " +
+             "NGAYDEN AS 'Arrive Time', " +
+             "NGAYDI AS 'Leave Time', " +
+             "THOIGIANTHUE AS N'Rental period'," +
+             "TONGHD AS N'Total '" +
+             $"FROM HOADON where YEAR(NGAYDI)={dtpNgay.Value.Year} AND MONTH(NGAYDI) ={dtpNgay.Value.Month}");
+            datahoadon.DataSource = dt;
+
+
+            //hiển thị luong nhan vien
+            labelemployeesalary.Text = pro.RenderID($"select dbo.LUONGF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			lbTotalReven.Text = pro.RenderID($"select dbo.DOANHTHUF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			lbNBO.Text = pro.RenderID($"select dbo.NUMBERORDER({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
+
+			dt = pro.GetData($"select * from LOINHUANNAM({dtpNgay.Value.Year})");
+			chart1.DataSource = dt;
+			chart1.Series["Series1"].XValueMember = "THANG";
+			chart1.Series["Series1"].YValueMembers = "LOINHUAN_USD";
+			chart1.DataBind();
+		}
+
 
         private void btnEX_Click(object sender, EventArgs e)
         {
@@ -107,42 +136,16 @@ namespace HotelManager.pages
             }*/
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            System.Data.DataTable dt = pro.GetData($"select count(*) as SoOder from HOADON Where YEAR(NGAYDEN) = '{dtpNgay.Value.Year}'");
-            lbNBO.Text = dt.Rows[0]["SoOder"].ToString();
-            dt = pro.GetData($"select sum(TONGHD) as TongTien from HOADON Where YEAR(NGAYDEN) = '{dtpNgay.Value.Year}'");
-            lbTotalReven.Text = dt.Rows[0]["TongTien"].ToString();
-            dt = pro.GetData($"SELECT MONTH(NGAYDEN) AS THANG, SUM((GIAPHONG + COALESCE(GIADV, 0)))" +
-                $" AS DOANHTHU FROM HOADON H LEFT JOIN CHITIETHOADON C ON H.MAHD = C.MAHD " +
-                $"WHERE YEAR(NGAYDEN) ='{dtpNgay.Value.Year}' GROUP BY MONTH(NGAYDEN) ORDER BY MONTH(NGAYDEN);");
-            chart1.DataSource = dt;
-            chart1.Series["Series1"].XValueMember = "THANG";
-            chart1.Series["Series1"].YValueMembers = "DOANHTHU";
-            chart1.DataBind();
-        }
-
-        private void btnCM_Click(object sender, EventArgs e)
-        {
-            System.Data.DataTable dt = pro.GetData($"select count(*) as SoOder from HOADON Where month(NGAYDEN) = '{dtpNgay.Value.Month}'");
-            lbNBO.Text = dt.Rows[0]["SoOder"].ToString();
-            dt = pro.GetData($"select sum(TONGHD) as TongTien from HOADON Where month(NGAYDEN) = '{dtpNgay.Value.Month}'");
-            lbTotalReven.Text = dt.Rows[0]["TongTien"].ToString();
-            dt = pro.GetData($"select sum(TONGHD) as TongTien from HOADON Where month(NGAYDEN) = '{dtpNgay.Value.Month}'");
-            lbTotalReven.Text = dt.Rows[0]["TongTien"].ToString();
-            dt = pro.GetData($"SELECT\r\n    n.Num AS Ngay,\r\n   " +
-                $" COALESCE(SUM(CASE WHEN MONTH(hd.NGAYDI) = '{dtpNgay.Value.Month}' AND YEAR(hd.NGAYDI) = '{dtpNgay.Value.Year}' THEN cthd.GIAPHONG + cthd.GIADV ELSE 0 END), 0) " +
-                $"AS DoanhThuNgay\r\nFROM Numbers AS n\r\nLEFT JOIN HOADON AS hd ON n.Num = DAY(hd.NGAYDI)\r\n" +
-                $"LEFT JOIN CHITIETHOADON AS cthd ON hd.MAHD = cthd.MAHD\r\nGROUP BY n.Num\r\nORDER BY Ngay;");
-            chart1.DataSource = dt;
-            chart1.Series["Series1"].XValueMember = "Ngay";
-            chart1.Series["Series1"].YValueMembers = "DoanhThuNgay";
-            chart1.DataBind();
-        }
 
 		private void lbPTTR_Click(object sender, EventArgs e)
 		{
 
 		}
+
+		private void panel4_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
 	}
 }
