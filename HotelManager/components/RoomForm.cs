@@ -1,6 +1,7 @@
 ﻿using HotelManager.pages;
 using HotelManager.utils;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HotelManager.components
@@ -88,42 +89,65 @@ namespace HotelManager.components
 
         private void roomFormButton_Click(object sender, EventArgs e)
         {
-            DBQuery db = new DBQuery();
-            if (true)
-            {
-                int status = roomStatusDropDown.selectedIndex == 0 ? 0 : 1;
-                try
-                {
-                  if(currentState == "ADD")
-                    {
-                        db.MutateData("INSERT INTO PHONG VALUES('"
-                            + roomNumberTextBox.Text + "', '"
-                            + roomTypeDropdown.selectedValue + "', '"
-                            + status + "','"
-                            + roomPriceTextBox.Text + "', '" + roomFloorDropDown.selectedValue + "')");
-                            (new CustomMessageBox("Xác nhận", "Thêm phòng thành công")).ShowDialog();
-                    }
-                    else
-                    {
-                        db.MutateData("UPDATE PHONG SET " +
-                            "SOPHONG = '" + roomNumberTextBox.Text + "'," +
-                            "TANG = '"+ roomFloorDropDown.selectedValue + "'," +
-                            "LOAIPHONG = '" + roomTypeDropdown.selectedValue + "'," +
-                            "TINHTRANG = '" + status + "'," +
-                            "GIAPHONG = '" + roomPriceTextBox.Text + "'" +
-                            $"WHERE SOPHONG = {Rooms.rNum}");
-                            (new CustomMessageBox("Xác nhận", "Cập nhật phòng thành công")).ShowDialog();
-                            this.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    (new CustomMessageBox("Xác nhận", "Có lỗi xảy ra. Hãy thử lại!")).ShowDialog();
-                    throw ex;
-                }
-                
-            }
-        }
+			DBQuery db = new DBQuery();
+
+
+			if (int.TryParse(roomNumberTextBox.Text, out int roomNumber) && int.TryParse(roomPriceTextBox.Text, out int roomPrice))
+			{
+				int status = roomStatusDropDown.selectedIndex == 0 ? 0 : 1;
+				DataTable dt = new DataTable();
+				dt = db.GetData("SELECT * FROM PHONG WHERE SOPHONG = " + roomNumber + "");
+
+				try
+				{
+					if (currentState == "ADD")
+					{
+
+						if (dt.Rows.Count == 0)
+						{
+							db.MutateData("INSERT INTO PHONG VALUES("
+						   + roomNumber + ", '"
+						   + roomTypeDropdown.selectedValue + "', '"
+						   + status + "',"
+						   + roomPrice + ", '" + roomFloorDropDown.selectedValue + "')");
+							(new CustomMessageBox("Xác nhận", "Thêm phòng thành công")).ShowDialog();
+						}
+						else
+						{
+							(new CustomMessageBox("Xác nhận", "Phòng đã tồn tại")).ShowDialog();
+						}
+					}
+					else
+					{
+
+						if (dt.Rows.Count <= 1)
+						{
+							db.MutateData("UPDATE PHONG SET " +
+							"TANG = '" + roomFloorDropDown.selectedValue + "'," +
+							"LOAIPHONG = '" + roomTypeDropdown.selectedValue + "'," +
+							"TINHTRANG = '" + status + "'," +
+							"GIAPHONG = '" + roomPriceTextBox.Text + "'" +
+							$"WHERE SOPHONG = {Rooms.rNum}");
+							(new CustomMessageBox("Xác nhận", "Cập nhật phòng thành công")).ShowDialog();
+							this.Close();
+						}
+						else
+						{
+							(new CustomMessageBox("Xác nhận", "Phòng đã tồn tại")).ShowDialog();
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					(new CustomMessageBox("Xác nhận", "Có lỗi xảy ra. Hãy thử lại!")).ShowDialog();
+					throw ex;
+				}
+			}
+			else
+			{
+				(new CustomMessageBox("Xác nhận", "Số phòng và giá phòng phải là số!")).ShowDialog();
+			}
+		}
 
 
         // CLEAR FORM 

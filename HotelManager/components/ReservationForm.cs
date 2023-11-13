@@ -7,6 +7,8 @@ using System.Data;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using WindowsFormsControlLibrary1;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace HotelManager.components
 {
@@ -84,7 +86,45 @@ namespace HotelManager.components
 
         }
 
-        public ReservationForm()
+		private void ExportDataBtn_Click(object sender, EventArgs e)
+		{
+			Excel.Application ExcelApp = new Excel.Application();
+			Excel.Workbook ExcelWorkbook = new Excel.Workbook();
+			Excel.Worksheet ExcelWorksheet = new Excel.Worksheet();
+			// Print in excel file here
+			ExcelWorksheet.Cells[1, 1] = "HÓA ĐƠN THANH TOÁN";
+			ExcelWorksheet.Range[ExcelWorksheet.Cells[1, 1], ExcelWorksheet.Cells[1, 3]].Merge();
+			ExcelWorksheet.Cells[1, 1].HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+			ExcelWorksheet.Name = "Hóa đơn";
+
+
+			// Save the Excel file
+
+			// 1. Open save dialog
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+			// 2. File excel displayed
+			saveFileDialog.Filter = "Excel files (*.xls)|*.xls|All files (*.*)|*.*";
+
+			// 3. Filter to get all .xls extension
+			saveFileDialog.FilterIndex = 1;
+
+
+			saveFileDialog.FileName = "HoaDon.xlsx";
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				// 4. Save Dialog
+				ExcelWorkbook.SaveAs(saveFileDialog.FileName);
+			}
+
+
+			// 5. Close
+			ExcelWorkbook.Close();
+			ExcelApp.Quit();
+		}
+
+		public ReservationForm()
         {
             currentState = "ADD";
             InitializeComponent();
@@ -120,6 +160,7 @@ namespace HotelManager.components
             this.arriveTime= dt.Rows[0].Field<DateTime>("ArriveTime");
             this.employeeid = dt.Rows[0].Field<string>("EmployeeID");
             object leaveTimeValue = dt.Rows[0]["LeaveTime"];
+       
             if (leaveTimeValue != DBNull.Value)
             {
                 this.leaveTime = dt.Rows[0].Field<DateTime>("LeaveTime");
@@ -189,7 +230,8 @@ namespace HotelManager.components
                 addressTextBox.Text = address;
                 PhoneNumberTextBox.Text = phoneNumber; 
                 arriveTimeDatepicker.Value = arriveTime;
-                if (checkngaydi)
+				ExportDataBtn.Enabled = true;
+				if (checkngaydi)
                 {
                 LeaveTimePicker.Value = leaveTime;
                 }

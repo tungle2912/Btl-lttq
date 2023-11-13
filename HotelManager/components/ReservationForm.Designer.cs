@@ -591,6 +591,7 @@
 			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.ExportDataBtn.UseVisualStyleBackColor = false;
+			this.ExportDataBtn.Click += new System.EventHandler(this.ExportDataBtn_Click);
 			// 
 			// closeReservationFormBtn
 			// 
