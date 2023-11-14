@@ -107,7 +107,7 @@ namespace HotelManager.pages
 
         private void btnEX_Click(object sender, EventArgs e)
         {
-         /*   ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+           /* ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             System.Data.DataTable dt = (System.Data.DataTable)dgvLuong.DataSource;
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -137,15 +137,6 @@ namespace HotelManager.pages
         }
 
 
-		private void lbPTTR_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void panel4_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
+	
 	}
 }

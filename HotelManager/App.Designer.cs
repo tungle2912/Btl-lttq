@@ -62,9 +62,10 @@
 			this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.panelTitleBar.Controls.Add(this.pageTitle);
 			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelTitleBar.Location = new System.Drawing.Point(300, 0);
+			this.panelTitleBar.Location = new System.Drawing.Point(267, 0);
+			this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panelTitleBar.Name = "panelTitleBar";
-			this.panelTitleBar.Size = new System.Drawing.Size(1296, 77);
+			this.panelTitleBar.Size = new System.Drawing.Size(1152, 62);
 			this.panelTitleBar.TabIndex = 1;
 			// 
 			// pageTitle
@@ -73,10 +74,10 @@
 			this.pageTitle.AutoSize = true;
 			this.pageTitle.Font = new System.Drawing.Font("Impact", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.pageTitle.ForeColor = System.Drawing.Color.Gainsboro;
-			this.pageTitle.Location = new System.Drawing.Point(583, 19);
+			this.pageTitle.Location = new System.Drawing.Point(518, 15);
 			this.pageTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.pageTitle.Name = "pageTitle";
-			this.pageTitle.Size = new System.Drawing.Size(81, 35);
+			this.pageTitle.Size = new System.Drawing.Size(67, 28);
 			this.pageTitle.TabIndex = 1;
 			this.pageTitle.Text = "Home";
 			this.pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,8 +88,9 @@
 			this.panelLogo.Controls.Add(this.homeLogo);
 			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelLogo.Location = new System.Drawing.Point(0, 0);
+			this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panelLogo.Name = "panelLogo";
-			this.panelLogo.Size = new System.Drawing.Size(300, 229);
+			this.panelLogo.Size = new System.Drawing.Size(267, 183);
 			this.panelLogo.TabIndex = 0;
 			// 
 			// homeLogo
@@ -96,8 +98,9 @@
 			this.homeLogo.Dock = System.Windows.Forms.DockStyle.Top;
 			this.homeLogo.Image = global::HotelManager.Properties.Resources.hotel_logo;
 			this.homeLogo.Location = new System.Drawing.Point(0, 0);
+			this.homeLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.homeLogo.Name = "homeLogo";
-			this.homeLogo.Size = new System.Drawing.Size(300, 226);
+			this.homeLogo.Size = new System.Drawing.Size(267, 181);
 			this.homeLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.homeLogo.TabIndex = 0;
 			this.homeLogo.TabStop = false;
@@ -117,19 +120,21 @@
 			this.panelMenu.Controls.Add(this.panelLogo);
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelMenu.Location = new System.Drawing.Point(0, 0);
+			this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panelMenu.Name = "panelMenu";
-			this.panelMenu.Size = new System.Drawing.Size(300, 962);
+			this.panelMenu.Size = new System.Drawing.Size(267, 770);
 			this.panelMenu.TabIndex = 0;
 			// 
 			// bunifuCustomLabel1
 			// 
+			this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.bunifuCustomLabel1.AutoSize = true;
 			this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 789);
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(11, 631);
 			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-			this.bunifuCustomLabel1.Size = new System.Drawing.Size(66, 25);
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(57, 20);
 			this.bunifuCustomLabel1.TabIndex = 32;
 			this.bunifuCustomLabel1.Text = "Profile";
 			// 
@@ -140,17 +145,19 @@
 			this.panel2.Controls.Add(this.avata);
 			this.panel2.Controls.Add(this.userAuth);
 			this.panel2.Font = new System.Drawing.Font("Impact", 10F);
-			this.panel2.Location = new System.Drawing.Point(3, 817);
+			this.panel2.Location = new System.Drawing.Point(3, 654);
+			this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(297, 66);
+			this.panel2.Size = new System.Drawing.Size(264, 53);
 			this.panel2.TabIndex = 31;
 			// 
 			// avata
 			// 
 			this.avata.Image = global::HotelManager.Properties.Resources._1;
 			this.avata.Location = new System.Drawing.Point(0, 0);
+			this.avata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.avata.Name = "avata";
-			this.avata.Size = new System.Drawing.Size(88, 66);
+			this.avata.Size = new System.Drawing.Size(78, 53);
 			this.avata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.avata.TabIndex = 32;
 			this.avata.TabStop = false;
@@ -160,9 +167,9 @@
 			this.userAuth.AutoSize = true;
 			this.userAuth.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.userAuth.ForeColor = System.Drawing.Color.White;
-			this.userAuth.Location = new System.Drawing.Point(118, 19);
+			this.userAuth.Location = new System.Drawing.Point(105, 15);
 			this.userAuth.Name = "userAuth";
-			this.userAuth.Size = new System.Drawing.Size(117, 29);
+			this.userAuth.Size = new System.Drawing.Size(96, 25);
 			this.userAuth.TabIndex = 0;
 			this.userAuth.Text = "lequangvu";
 			this.userAuth.Click += new System.EventHandler(this.userAuth_Click);
@@ -181,10 +188,11 @@
 			this.LogoutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.LogoutButton.IconSize = 32;
 			this.LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.LogoutButton.Location = new System.Drawing.Point(0, 889);
+			this.LogoutButton.Location = new System.Drawing.Point(0, 711);
+			this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.LogoutButton.Name = "LogoutButton";
-			this.LogoutButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.LogoutButton.Size = new System.Drawing.Size(300, 70);
+			this.LogoutButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.LogoutButton.Size = new System.Drawing.Size(267, 56);
 			this.LogoutButton.TabIndex = 29;
 			this.LogoutButton.Text = "Log out";
 			this.LogoutButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,10 +212,11 @@
 			this.SettingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.SettingButton.IconSize = 32;
 			this.SettingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.SettingButton.Location = new System.Drawing.Point(0, 584);
+			this.SettingButton.Location = new System.Drawing.Point(0, 468);
+			this.SettingButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.SettingButton.Name = "SettingButton";
-			this.SettingButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.SettingButton.Size = new System.Drawing.Size(300, 71);
+			this.SettingButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.SettingButton.Size = new System.Drawing.Size(267, 57);
 			this.SettingButton.TabIndex = 26;
 			this.SettingButton.Text = "Setting";
 			this.SettingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,10 +236,11 @@
 			this.ReservationButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.ReservationButton.IconSize = 32;
 			this.ReservationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ReservationButton.Location = new System.Drawing.Point(0, 513);
+			this.ReservationButton.Location = new System.Drawing.Point(0, 411);
+			this.ReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.ReservationButton.Name = "ReservationButton";
-			this.ReservationButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.ReservationButton.Size = new System.Drawing.Size(300, 71);
+			this.ReservationButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.ReservationButton.Size = new System.Drawing.Size(267, 57);
 			this.ReservationButton.TabIndex = 25;
 			this.ReservationButton.Text = "Reservation";
 			this.ReservationButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,10 +260,11 @@
 			this.EmployeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.EmployeesButton.IconSize = 32;
 			this.EmployeesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.EmployeesButton.Location = new System.Drawing.Point(0, 442);
+			this.EmployeesButton.Location = new System.Drawing.Point(0, 354);
+			this.EmployeesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.EmployeesButton.Name = "EmployeesButton";
-			this.EmployeesButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.EmployeesButton.Size = new System.Drawing.Size(300, 71);
+			this.EmployeesButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.EmployeesButton.Size = new System.Drawing.Size(267, 57);
 			this.EmployeesButton.TabIndex = 24;
 			this.EmployeesButton.Text = "Employees";
 			this.EmployeesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,10 +285,11 @@
 			this.ClientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.ClientsButton.IconSize = 32;
 			this.ClientsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ClientsButton.Location = new System.Drawing.Point(0, 371);
+			this.ClientsButton.Location = new System.Drawing.Point(0, 297);
+			this.ClientsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.ClientsButton.Name = "ClientsButton";
-			this.ClientsButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.ClientsButton.Size = new System.Drawing.Size(300, 71);
+			this.ClientsButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.ClientsButton.Size = new System.Drawing.Size(267, 57);
 			this.ClientsButton.TabIndex = 23;
 			this.ClientsButton.Text = "Guest";
 			this.ClientsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,10 +309,11 @@
 			this.RoomsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.RoomsButton.IconSize = 32;
 			this.RoomsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.RoomsButton.Location = new System.Drawing.Point(0, 300);
+			this.RoomsButton.Location = new System.Drawing.Point(0, 240);
+			this.RoomsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.RoomsButton.Name = "RoomsButton";
-			this.RoomsButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.RoomsButton.Size = new System.Drawing.Size(300, 71);
+			this.RoomsButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.RoomsButton.Size = new System.Drawing.Size(267, 57);
 			this.RoomsButton.TabIndex = 20;
 			this.RoomsButton.Text = "Rooms";
 			this.RoomsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,10 +333,11 @@
 			this.DashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.DashboardButton.IconSize = 32;
 			this.DashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.DashboardButton.Location = new System.Drawing.Point(0, 229);
+			this.DashboardButton.Location = new System.Drawing.Point(0, 183);
+			this.DashboardButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.DashboardButton.Name = "DashboardButton";
-			this.DashboardButton.Padding = new System.Windows.Forms.Padding(15, 0, 30, 0);
-			this.DashboardButton.Size = new System.Drawing.Size(300, 71);
+			this.DashboardButton.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+			this.DashboardButton.Size = new System.Drawing.Size(267, 57);
 			this.DashboardButton.TabIndex = 10;
 			this.DashboardButton.Text = "Dashboard";
 			this.DashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -336,10 +350,10 @@
 			this.panelDestopApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
 			this.panelDestopApp.Controls.Add(this.pictureBox1);
 			this.panelDestopApp.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelDestopApp.Location = new System.Drawing.Point(300, 77);
-			this.panelDestopApp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panelDestopApp.Location = new System.Drawing.Point(267, 62);
+			this.panelDestopApp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panelDestopApp.Name = "panelDestopApp";
-			this.panelDestopApp.Size = new System.Drawing.Size(1296, 885);
+			this.panelDestopApp.Size = new System.Drawing.Size(1152, 708);
 			this.panelDestopApp.TabIndex = 2;
 			this.panelDestopApp.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDestopApp_Paint);
 			// 
@@ -350,26 +364,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Image = global::HotelManager.Properties.Resources.hotel_logo;
-			this.pictureBox1.Location = new System.Drawing.Point(267, 114);
+			this.pictureBox1.Location = new System.Drawing.Point(237, 91);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(699, 596);
+			this.pictureBox1.Size = new System.Drawing.Size(621, 477);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
 			// App
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(1596, 962);
+			this.ClientSize = new System.Drawing.Size(1419, 770);
 			this.Controls.Add(this.panelDestopApp);
 			this.Controls.Add(this.panelTitleBar);
 			this.Controls.Add(this.panelMenu);
 			this.ForeColor = System.Drawing.Color.Black;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "App";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ROYAL HOTEL";
