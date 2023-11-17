@@ -42,26 +42,21 @@
 			this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.dtpNgay = new Bunifu.Framework.UI.BunifuDatepicker();
-			this.ExportDataBtn = new FontAwesome.Sharp.IconButton();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.lbPTNB = new System.Windows.Forms.Label();
 			this.lbNBO = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.labeltotalprofit = new System.Windows.Forms.Label();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.lbPTTP = new System.Windows.Forms.Label();
 			this.lbTotaP = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.lbPTTR = new System.Windows.Forms.Label();
 			this.lbTotalReven = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lbPTEM = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -72,26 +67,31 @@
 			this.lbTotalBooked = new System.Windows.Forms.Label();
 			this.lbTotalRoom = new System.Windows.Forms.Label();
 			this.lbTotalstaff = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.datahoadon = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.iconButton4 = new FontAwesome.Sharp.IconButton();
 			this.iconButton3 = new FontAwesome.Sharp.IconButton();
 			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.label9 = new System.Windows.Forms.Label();
-			this.datahoadon = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.ExportDataBtn = new FontAwesome.Sharp.IconButton();
 			this.panel4.SuspendLayout();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel5.SuspendLayout();
 			this.panel7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
 			this.panel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.datahoadon)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// elementHost1
@@ -132,31 +132,6 @@
 			this.dtpNgay.Value = new System.DateTime(2023, 11, 8, 14, 52, 17, 840);
 			this.dtpNgay.onValueChanged += new System.EventHandler(this.dtpNgay_onValueChanged);
 			// 
-			// ExportDataBtn
-			// 
-			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
-			this.ExportDataBtn.Enabled = false;
-			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
-			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.ExportDataBtn.IconSize = 28;
-			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.Location = new System.Drawing.Point(1498, 11);
-			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.ExportDataBtn.Name = "ExportDataBtn";
-			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(9, 2, 9, 2);
-			this.ExportDataBtn.Size = new System.Drawing.Size(195, 58);
-			this.ExportDataBtn.TabIndex = 155;
-			this.ExportDataBtn.Text = "Export Data";
-			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.ExportDataBtn.UseVisualStyleBackColor = false;
-			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -169,17 +144,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(420, 98);
 			this.panel1.TabIndex = 17;
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::HotelManager.Properties.Resources.customer;
-			this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(84, 71);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 10;
-			this.pictureBox1.TabStop = false;
 			// 
 			// lbPTNB
 			// 
@@ -244,17 +208,6 @@
 			this.labeltotalprofit.TabIndex = 13;
 			this.labeltotalprofit.Text = "1000";
 			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Image = global::HotelManager.Properties.Resources.increase;
-			this.pictureBox3.Location = new System.Drawing.Point(10, 12);
-			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(93, 66);
-			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox3.TabIndex = 12;
-			this.pictureBox3.TabStop = false;
-			// 
 			// lbPTTP
 			// 
 			this.lbPTTP.AutoSize = true;
@@ -307,17 +260,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(444, 98);
 			this.panel2.TabIndex = 19;
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = global::HotelManager.Properties.Resources.margin;
-			this.pictureBox2.Location = new System.Drawing.Point(9, 11);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(82, 71);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 11;
-			this.pictureBox2.TabStop = false;
 			// 
 			// lbPTTR
 			// 
@@ -384,17 +326,6 @@
 			this.panel7.Name = "panel7";
 			this.panel7.Size = new System.Drawing.Size(381, 98);
 			this.panel7.TabIndex = 20;
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Image = global::HotelManager.Properties.Resources.customer;
-			this.pictureBox4.Location = new System.Drawing.Point(12, 12);
-			this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(82, 71);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox4.TabIndex = 10;
-			this.pictureBox4.TabStop = false;
 			// 
 			// label1
 			// 
@@ -597,6 +528,61 @@
 			this.lbTotalstaff.TabIndex = 13;
 			this.lbTotalstaff.Text = ":";
 			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.label9.Location = new System.Drawing.Point(33, 20);
+			this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(159, 29);
+			this.label9.TabIndex = 6;
+			this.label9.Text = "Total Counter";
+			// 
+			// datahoadon
+			// 
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.datahoadon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			this.datahoadon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.datahoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.datahoadon.BackgroundColor = System.Drawing.Color.Gainsboro;
+			this.datahoadon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.datahoadon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.datahoadon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this.datahoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.datahoadon.DoubleBuffered = true;
+			this.datahoadon.EnableHeadersVisualStyles = false;
+			this.datahoadon.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+			this.datahoadon.HeaderForeColor = System.Drawing.Color.White;
+			this.datahoadon.Location = new System.Drawing.Point(378, 632);
+			this.datahoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.datahoadon.Name = "datahoadon";
+			this.datahoadon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			this.datahoadon.RowHeadersWidth = 62;
+			this.datahoadon.RowTemplate.Height = 28;
+			this.datahoadon.Size = new System.Drawing.Size(1318, 298);
+			this.datahoadon.TabIndex = 24;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::HotelManager.Properties.Resources.customer;
+			this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(84, 71);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 10;
+			this.pictureBox1.TabStop = false;
+			// 
 			// iconButton4
 			// 
 			this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -680,49 +666,63 @@
 			this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.iconButton1.UseVisualStyleBackColor = false;
 			// 
-			// label9
+			// pictureBox4
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label9.Location = new System.Drawing.Point(33, 20);
-			this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(159, 29);
-			this.label9.TabIndex = 6;
-			this.label9.Text = "Total Counter";
+			this.pictureBox4.Image = global::HotelManager.Properties.Resources._9135010;
+			this.pictureBox4.Location = new System.Drawing.Point(12, 12);
+			this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(82, 71);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox4.TabIndex = 10;
+			this.pictureBox4.TabStop = false;
 			// 
-			// datahoadon
+			// pictureBox2
 			// 
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.datahoadon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-			this.datahoadon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.datahoadon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.datahoadon.BackgroundColor = System.Drawing.Color.Gainsboro;
-			this.datahoadon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.datahoadon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.datahoadon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-			this.datahoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.datahoadon.DoubleBuffered = true;
-			this.datahoadon.EnableHeadersVisualStyles = false;
-			this.datahoadon.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-			this.datahoadon.HeaderForeColor = System.Drawing.Color.White;
-			this.datahoadon.Location = new System.Drawing.Point(378, 632);
-			this.datahoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.datahoadon.Name = "datahoadon";
-			this.datahoadon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			this.datahoadon.RowHeadersWidth = 62;
-			this.datahoadon.RowTemplate.Height = 28;
-			this.datahoadon.Size = new System.Drawing.Size(1318, 298);
-			this.datahoadon.TabIndex = 24;
+			this.pictureBox2.Image = global::HotelManager.Properties.Resources.margin;
+			this.pictureBox2.Location = new System.Drawing.Point(9, 11);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(82, 71);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 11;
+			this.pictureBox2.TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Image = global::HotelManager.Properties.Resources.increase;
+			this.pictureBox3.Location = new System.Drawing.Point(10, 12);
+			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(93, 66);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox3.TabIndex = 12;
+			this.pictureBox3.TabStop = false;
+			// 
+			// ExportDataBtn
+			// 
+			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
+			this.ExportDataBtn.Enabled = false;
+			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
+			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ExportDataBtn.IconSize = 28;
+			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ExportDataBtn.Location = new System.Drawing.Point(1498, 11);
+			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ExportDataBtn.Name = "ExportDataBtn";
+			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(9, 2, 9, 2);
+			this.ExportDataBtn.Size = new System.Drawing.Size(195, 58);
+			this.ExportDataBtn.TabIndex = 155;
+			this.ExportDataBtn.Text = "Export Data";
+			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.ExportDataBtn.UseVisualStyleBackColor = false;
 			// 
 			// Dashboard
 			// 
@@ -745,22 +745,22 @@
 			this.panel4.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel5.ResumeLayout(false);
 			this.panel7.ResumeLayout(false);
 			this.panel7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.datahoadon)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			this.ResumeLayout(false);
 
         }

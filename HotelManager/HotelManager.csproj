@@ -454,6 +454,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="assets\images\america-flag.png" />
+    <None Include="Resources\9135010.png" />
+    <None Include="Resources\employeesalary.jfif" />
     <None Include="assets\images\customer.png" />
     <Content Include="assets\images\germany-flag.png" />
     <Content Include="assets\images\hotel-logo.png" />
