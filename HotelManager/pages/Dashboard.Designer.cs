@@ -41,8 +41,8 @@
 			this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
 			this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
 			this.panel4 = new System.Windows.Forms.Panel();
-			this.dtpNgay = new Bunifu.Framework.UI.BunifuDatepicker();
 			this.ExportDataBtn = new FontAwesome.Sharp.IconButton();
+			this.dtpNgay = new Bunifu.Framework.UI.BunifuDatepicker();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.lbPTNB = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lbPTEM = new System.Windows.Forms.Label();
 			this.labelemployeesalary = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -109,13 +109,33 @@
 			// 
 			this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel4.Controls.Add(this.dtpNgay);
 			this.panel4.Controls.Add(this.ExportDataBtn);
+			this.panel4.Controls.Add(this.dtpNgay);
 			this.panel4.Location = new System.Drawing.Point(0, 2);
-			this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(1533, 66);
+			this.panel4.Size = new System.Drawing.Size(1150, 54);
 			this.panel4.TabIndex = 16;
+			// 
+			// ExportDataBtn
+			// 
+			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
+			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
+			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
+			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.ExportDataBtn.IconSize = 32;
+			this.ExportDataBtn.Location = new System.Drawing.Point(961, 9);
+			this.ExportDataBtn.Name = "ExportDataBtn";
+			this.ExportDataBtn.Size = new System.Drawing.Size(167, 37);
+			this.ExportDataBtn.TabIndex = 157;
+			this.ExportDataBtn.Text = "Export Data";
+			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.ExportDataBtn.UseVisualStyleBackColor = false;
+			this.ExportDataBtn.Click += new System.EventHandler(this.ExportDataBtn_Click);
 			// 
 			// dtpNgay
 			// 
@@ -124,38 +144,13 @@
 			this.dtpNgay.ForeColor = System.Drawing.Color.White;
 			this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
 			this.dtpNgay.FormatCustom = null;
-			this.dtpNgay.Location = new System.Drawing.Point(27, 11);
-			this.dtpNgay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+			this.dtpNgay.Location = new System.Drawing.Point(20, 9);
+			this.dtpNgay.Margin = new System.Windows.Forms.Padding(4);
 			this.dtpNgay.Name = "dtpNgay";
-			this.dtpNgay.Size = new System.Drawing.Size(373, 48);
+			this.dtpNgay.Size = new System.Drawing.Size(280, 39);
 			this.dtpNgay.TabIndex = 156;
 			this.dtpNgay.Value = new System.DateTime(2023, 11, 8, 14, 52, 17, 840);
 			this.dtpNgay.onValueChanged += new System.EventHandler(this.dtpNgay_onValueChanged);
-			// 
-			// ExportDataBtn
-			// 
-			this.ExportDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.ExportDataBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(116)))), ((int)(((byte)(74)))));
-			this.ExportDataBtn.Enabled = false;
-			this.ExportDataBtn.FlatAppearance.BorderSize = 0;
-			this.ExportDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ExportDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			this.ExportDataBtn.ForeColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-			this.ExportDataBtn.IconColor = System.Drawing.Color.White;
-			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.ExportDataBtn.IconSize = 28;
-			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.Location = new System.Drawing.Point(1332, 9);
-			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.ExportDataBtn.Name = "ExportDataBtn";
-			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
-			this.ExportDataBtn.Size = new System.Drawing.Size(173, 46);
-			this.ExportDataBtn.TabIndex = 155;
-			this.ExportDataBtn.Text = "Export Data";
-			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.ExportDataBtn.UseVisualStyleBackColor = false;
 			// 
 			// panel1
 			// 
@@ -164,19 +159,17 @@
 			this.panel1.Controls.Add(this.lbPTNB);
 			this.panel1.Controls.Add(this.lbNBO);
 			this.panel1.Controls.Add(this.label2);
-			this.panel1.Location = new System.Drawing.Point(21, 70);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel1.Location = new System.Drawing.Point(16, 57);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(373, 78);
+			this.panel1.Size = new System.Drawing.Size(280, 63);
 			this.panel1.TabIndex = 17;
 			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = global::HotelManager.Properties.Resources.customer;
-			this.pictureBox1.Location = new System.Drawing.Point(11, 10);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox1.Location = new System.Drawing.Point(8, 8);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(75, 57);
+			this.pictureBox1.Size = new System.Drawing.Size(56, 46);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 10;
 			this.pictureBox1.TabStop = false;
@@ -185,11 +178,10 @@
 			// 
 			this.lbPTNB.AutoSize = true;
 			this.lbPTNB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbPTNB.ForeColor = System.Drawing.Color.LightGreen;
-			this.lbPTNB.Location = new System.Drawing.Point(283, 23);
-			this.lbPTNB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbPTNB.ForeColor = System.Drawing.Color.LimeGreen;
+			this.lbPTNB.Location = new System.Drawing.Point(212, 19);
 			this.lbPTNB.Name = "lbPTNB";
-			this.lbPTNB.Size = new System.Drawing.Size(64, 25);
+			this.lbPTNB.Size = new System.Drawing.Size(50, 20);
 			this.lbPTNB.TabIndex = 6;
 			this.lbPTNB.Text = "+15%";
 			// 
@@ -198,10 +190,9 @@
 			this.lbNBO.AutoSize = true;
 			this.lbNBO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbNBO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.lbNBO.Location = new System.Drawing.Point(87, 38);
-			this.lbNBO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbNBO.Location = new System.Drawing.Point(65, 31);
 			this.lbNBO.Name = "lbNBO";
-			this.lbNBO.Size = new System.Drawing.Size(56, 25);
+			this.lbNBO.Size = new System.Drawing.Size(45, 20);
 			this.lbNBO.TabIndex = 5;
 			this.lbNBO.Text = "1000";
 			// 
@@ -210,10 +201,9 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.Gray;
-			this.label2.Location = new System.Drawing.Point(88, 11);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Location = new System.Drawing.Point(66, 9);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(135, 20);
+			this.label2.Size = new System.Drawing.Size(115, 17);
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Number of Order";
 			// 
@@ -226,10 +216,10 @@
 			this.panel3.Controls.Add(this.lbPTTP);
 			this.panel3.Controls.Add(this.lbTotaP);
 			this.panel3.Controls.Add(this.label8);
-			this.panel3.Location = new System.Drawing.Point(1188, 0);
-			this.panel3.Margin = new System.Windows.Forms.Padding(4, 39, 4, 4);
+			this.panel3.Location = new System.Drawing.Point(891, 0);
+			this.panel3.Margin = new System.Windows.Forms.Padding(3, 32, 3, 3);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(320, 75);
+			this.panel3.Size = new System.Drawing.Size(240, 61);
 			this.panel3.TabIndex = 18;
 			// 
 			// labeltotalprofit
@@ -237,20 +227,18 @@
 			this.labeltotalprofit.AutoSize = true;
 			this.labeltotalprofit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labeltotalprofit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.labeltotalprofit.Location = new System.Drawing.Point(101, 34);
-			this.labeltotalprofit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labeltotalprofit.Location = new System.Drawing.Point(76, 28);
 			this.labeltotalprofit.Name = "labeltotalprofit";
-			this.labeltotalprofit.Size = new System.Drawing.Size(56, 25);
+			this.labeltotalprofit.Size = new System.Drawing.Size(45, 20);
 			this.labeltotalprofit.TabIndex = 13;
 			this.labeltotalprofit.Text = "1000";
 			// 
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = global::HotelManager.Properties.Resources.increase;
-			this.pictureBox3.Location = new System.Drawing.Point(9, 10);
-			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox3.Location = new System.Drawing.Point(7, 8);
 			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(83, 53);
+			this.pictureBox3.Size = new System.Drawing.Size(62, 43);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox3.TabIndex = 12;
 			this.pictureBox3.TabStop = false;
@@ -260,10 +248,9 @@
 			this.lbPTTP.AutoSize = true;
 			this.lbPTTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbPTTP.ForeColor = System.Drawing.Color.LimeGreen;
-			this.lbPTTP.Location = new System.Drawing.Point(249, 23);
-			this.lbPTTP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbPTTP.Location = new System.Drawing.Point(187, 19);
 			this.lbPTTP.Name = "lbPTTP";
-			this.lbPTTP.Size = new System.Drawing.Size(64, 25);
+			this.lbPTTP.Size = new System.Drawing.Size(50, 20);
 			this.lbPTTP.TabIndex = 9;
 			this.lbPTTP.Text = "+15%";
 			this.lbPTTP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -273,10 +260,9 @@
 			this.lbTotaP.AutoSize = true;
 			this.lbTotaP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotaP.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.lbTotaP.Location = new System.Drawing.Point(85, 38);
-			this.lbTotaP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotaP.Location = new System.Drawing.Point(64, 31);
 			this.lbTotaP.Name = "lbTotaP";
-			this.lbTotaP.Size = new System.Drawing.Size(0, 25);
+			this.lbTotaP.Size = new System.Drawing.Size(0, 20);
 			this.lbTotaP.TabIndex = 7;
 			this.lbTotaP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
@@ -285,10 +271,9 @@
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label8.ForeColor = System.Drawing.Color.Gray;
-			this.label8.Location = new System.Drawing.Point(92, 9);
-			this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label8.Location = new System.Drawing.Point(69, 7);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(91, 20);
+			this.label8.Size = new System.Drawing.Size(77, 17);
 			this.label8.TabIndex = 8;
 			this.label8.Text = "Total Profit";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,19 +287,17 @@
 			this.panel2.Controls.Add(this.lbPTTR);
 			this.panel2.Controls.Add(this.lbTotalReven);
 			this.panel2.Controls.Add(this.label5);
-			this.panel2.Location = new System.Drawing.Point(415, 0);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel2.Location = new System.Drawing.Point(311, 0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(395, 78);
+			this.panel2.Size = new System.Drawing.Size(296, 63);
 			this.panel2.TabIndex = 19;
 			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = global::HotelManager.Properties.Resources.margin;
-			this.pictureBox2.Location = new System.Drawing.Point(8, 9);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox2.Location = new System.Drawing.Point(6, 7);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(73, 57);
+			this.pictureBox2.Size = new System.Drawing.Size(55, 46);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox2.TabIndex = 11;
 			this.pictureBox2.TabStop = false;
@@ -324,10 +307,9 @@
 			this.lbPTTR.AutoSize = true;
 			this.lbPTTR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbPTTR.ForeColor = System.Drawing.Color.LimeGreen;
-			this.lbPTTR.Location = new System.Drawing.Point(303, 23);
-			this.lbPTTR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbPTTR.Location = new System.Drawing.Point(227, 19);
 			this.lbPTTR.Name = "lbPTTR";
-			this.lbPTTR.Size = new System.Drawing.Size(64, 25);
+			this.lbPTTR.Size = new System.Drawing.Size(50, 20);
 			this.lbPTTR.TabIndex = 9;
 			this.lbPTTR.Text = "+25%";
 			this.lbPTTR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,10 +319,9 @@
 			this.lbTotalReven.AutoSize = true;
 			this.lbTotalReven.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalReven.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.lbTotalReven.Location = new System.Drawing.Point(125, 38);
-			this.lbTotalReven.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotalReven.Location = new System.Drawing.Point(94, 31);
 			this.lbTotalReven.Name = "lbTotalReven";
-			this.lbTotalReven.Size = new System.Drawing.Size(56, 25);
+			this.lbTotalReven.Size = new System.Drawing.Size(45, 20);
 			this.lbTotalReven.TabIndex = 7;
 			this.lbTotalReven.Text = "1000";
 			this.lbTotalReven.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,10 +331,9 @@
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.ForeColor = System.Drawing.Color.Gray;
-			this.label5.Location = new System.Drawing.Point(125, 10);
-			this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label5.Location = new System.Drawing.Point(94, 8);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(116, 20);
+			this.label5.Size = new System.Drawing.Size(101, 17);
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Total Revenue";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,10 +345,10 @@
 			this.panel5.Controls.Add(this.panel7);
 			this.panel5.Controls.Add(this.panel2);
 			this.panel5.Controls.Add(this.panel3);
-			this.panel5.Location = new System.Drawing.Point(0, 71);
-			this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.panel5.Location = new System.Drawing.Point(0, 58);
+			this.panel5.Margin = new System.Windows.Forms.Padding(2);
 			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(1533, 80);
+			this.panel5.Size = new System.Drawing.Size(1150, 65);
 			this.panel5.TabIndex = 20;
 			// 
 			// panel7
@@ -377,47 +357,43 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.panel7.Controls.Add(this.pictureBox4);
-			this.panel7.Controls.Add(this.label1);
+			this.panel7.Controls.Add(this.lbPTEM);
 			this.panel7.Controls.Add(this.labelemployeesalary);
 			this.panel7.Controls.Add(this.label4);
-			this.panel7.Location = new System.Drawing.Point(828, -1);
-			this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel7.Location = new System.Drawing.Point(621, -1);
 			this.panel7.Name = "panel7";
-			this.panel7.Size = new System.Drawing.Size(339, 78);
+			this.panel7.Size = new System.Drawing.Size(254, 63);
 			this.panel7.TabIndex = 20;
 			// 
 			// pictureBox4
 			// 
 			this.pictureBox4.Image = global::HotelManager.Properties.Resources.customer;
-			this.pictureBox4.Location = new System.Drawing.Point(11, 10);
-			this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox4.Location = new System.Drawing.Point(8, 8);
 			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(73, 57);
+			this.pictureBox4.Size = new System.Drawing.Size(55, 46);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox4.TabIndex = 10;
 			this.pictureBox4.TabStop = false;
 			// 
-			// label1
+			// lbPTEM
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.LightGreen;
-			this.label1.Location = new System.Drawing.Point(252, 25);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(64, 25);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "+15%";
+			this.lbPTEM.AutoSize = true;
+			this.lbPTEM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbPTEM.ForeColor = System.Drawing.Color.LimeGreen;
+			this.lbPTEM.Location = new System.Drawing.Point(189, 20);
+			this.lbPTEM.Name = "lbPTEM";
+			this.lbPTEM.Size = new System.Drawing.Size(50, 20);
+			this.lbPTEM.TabIndex = 6;
+			this.lbPTEM.Text = "+15%";
 			// 
 			// labelemployeesalary
 			// 
 			this.labelemployeesalary.AutoSize = true;
 			this.labelemployeesalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelemployeesalary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.labelemployeesalary.Location = new System.Drawing.Point(92, 38);
-			this.labelemployeesalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labelemployeesalary.Location = new System.Drawing.Point(69, 31);
 			this.labelemployeesalary.Name = "labelemployeesalary";
-			this.labelemployeesalary.Size = new System.Drawing.Size(56, 25);
+			this.labelemployeesalary.Size = new System.Drawing.Size(45, 20);
 			this.labelemployeesalary.TabIndex = 5;
 			this.labelemployeesalary.Text = "1000";
 			// 
@@ -426,10 +402,9 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.Gray;
-			this.label4.Location = new System.Drawing.Point(92, 11);
-			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label4.Location = new System.Drawing.Point(69, 9);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(132, 20);
+			this.label4.Size = new System.Drawing.Size(112, 17);
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Employee salary";
 			// 
@@ -458,8 +433,7 @@
 			legend1.ForeColor = System.Drawing.Color.White;
 			legend1.Name = "Legend1";
 			this.chart1.Legends.Add(legend1);
-			this.chart1.Location = new System.Drawing.Point(21, 165);
-			this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.chart1.Location = new System.Drawing.Point(16, 134);
 			this.chart1.Name = "chart1";
 			series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.LeftRight;
 			series1.BackSecondaryColor = System.Drawing.Color.DodgerBlue;
@@ -472,7 +446,7 @@
 			series1.MarkerSize = 10;
 			series1.Name = "Series1";
 			this.chart1.Series.Add(series1);
-			this.chart1.Size = new System.Drawing.Size(1144, 322);
+			this.chart1.Size = new System.Drawing.Size(858, 262);
 			this.chart1.TabIndex = 21;
 			this.chart1.Text = "chart1";
 			title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
@@ -501,8 +475,7 @@
 			legend2.Name = "Legend1";
 			legend2.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 			this.chart2.Legends.Add(legend2);
-			this.chart2.Location = new System.Drawing.Point(1188, 165);
-			this.chart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.chart2.Location = new System.Drawing.Point(891, 134);
 			this.chart2.Name = "chart2";
 			series2.BorderColor = System.Drawing.Color.Black;
 			series2.BorderWidth = 5;
@@ -516,7 +489,7 @@
 			series2.Name = "Series1";
 			series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
 			this.chart2.Series.Add(series2);
-			this.chart2.Size = new System.Drawing.Size(320, 322);
+			this.chart2.Size = new System.Drawing.Size(240, 262);
 			this.chart2.TabIndex = 22;
 			this.chart2.Text = "chart2";
 			title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
@@ -540,10 +513,9 @@
 			this.panel6.Controls.Add(this.iconButton1);
 			this.panel6.Controls.Add(this.label9);
 			this.panel6.ForeColor = System.Drawing.Color.CornflowerBlue;
-			this.panel6.Location = new System.Drawing.Point(21, 506);
-			this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel6.Location = new System.Drawing.Point(16, 411);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(292, 238);
+			this.panel6.Size = new System.Drawing.Size(219, 193);
 			this.panel6.TabIndex = 23;
 			// 
 			// lbTotalAvaliable
@@ -552,10 +524,9 @@
 			this.lbTotalAvaliable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.lbTotalAvaliable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalAvaliable.ForeColor = System.Drawing.Color.White;
-			this.lbTotalAvaliable.Location = new System.Drawing.Point(185, 185);
-			this.lbTotalAvaliable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotalAvaliable.Location = new System.Drawing.Point(139, 150);
 			this.lbTotalAvaliable.Name = "lbTotalAvaliable";
-			this.lbTotalAvaliable.Size = new System.Drawing.Size(18, 25);
+			this.lbTotalAvaliable.Size = new System.Drawing.Size(13, 20);
 			this.lbTotalAvaliable.TabIndex = 19;
 			this.lbTotalAvaliable.Text = ":";
 			// 
@@ -565,10 +536,9 @@
 			this.lbTotalBooked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.lbTotalBooked.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalBooked.ForeColor = System.Drawing.Color.White;
-			this.lbTotalBooked.Location = new System.Drawing.Point(187, 138);
-			this.lbTotalBooked.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotalBooked.Location = new System.Drawing.Point(140, 112);
 			this.lbTotalBooked.Name = "lbTotalBooked";
-			this.lbTotalBooked.Size = new System.Drawing.Size(18, 25);
+			this.lbTotalBooked.Size = new System.Drawing.Size(13, 20);
 			this.lbTotalBooked.TabIndex = 18;
 			this.lbTotalBooked.Text = ":";
 			// 
@@ -578,10 +548,9 @@
 			this.lbTotalRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.lbTotalRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalRoom.ForeColor = System.Drawing.Color.White;
-			this.lbTotalRoom.Location = new System.Drawing.Point(187, 94);
-			this.lbTotalRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotalRoom.Location = new System.Drawing.Point(140, 76);
 			this.lbTotalRoom.Name = "lbTotalRoom";
-			this.lbTotalRoom.Size = new System.Drawing.Size(18, 25);
+			this.lbTotalRoom.Size = new System.Drawing.Size(13, 20);
 			this.lbTotalRoom.TabIndex = 17;
 			this.lbTotalRoom.Text = ":";
 			// 
@@ -591,10 +560,9 @@
 			this.lbTotalstaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.lbTotalstaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbTotalstaff.ForeColor = System.Drawing.Color.White;
-			this.lbTotalstaff.Location = new System.Drawing.Point(187, 50);
-			this.lbTotalstaff.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lbTotalstaff.Location = new System.Drawing.Point(140, 41);
 			this.lbTotalstaff.Name = "lbTotalstaff";
-			this.lbTotalstaff.Size = new System.Drawing.Size(18, 25);
+			this.lbTotalstaff.Size = new System.Drawing.Size(13, 20);
 			this.lbTotalstaff.TabIndex = 13;
 			this.lbTotalstaff.Text = ":";
 			// 
@@ -608,11 +576,10 @@
 			this.iconButton4.IconColor = System.Drawing.Color.White;
 			this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
 			this.iconButton4.IconSize = 32;
-			this.iconButton4.Location = new System.Drawing.Point(0, 80);
-			this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.iconButton4.Location = new System.Drawing.Point(0, 65);
 			this.iconButton4.Name = "iconButton4";
 			this.iconButton4.Rotation = 1D;
-			this.iconButton4.Size = new System.Drawing.Size(185, 53);
+			this.iconButton4.Size = new System.Drawing.Size(139, 43);
 			this.iconButton4.TabIndex = 16;
 			this.iconButton4.Text = "Total Room";
 			this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -629,11 +596,10 @@
 			this.iconButton3.IconColor = System.Drawing.Color.White;
 			this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
 			this.iconButton3.IconSize = 32;
-			this.iconButton3.Location = new System.Drawing.Point(1, 171);
-			this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.iconButton3.Location = new System.Drawing.Point(1, 139);
 			this.iconButton3.Name = "iconButton3";
 			this.iconButton3.Rotation = 1D;
-			this.iconButton3.Size = new System.Drawing.Size(184, 53);
+			this.iconButton3.Size = new System.Drawing.Size(138, 43);
 			this.iconButton3.TabIndex = 15;
 			this.iconButton3.Text = "Avaliable";
 			this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -649,11 +615,10 @@
 			this.iconButton2.IconColor = System.Drawing.Color.White;
 			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
 			this.iconButton2.IconSize = 32;
-			this.iconButton2.Location = new System.Drawing.Point(-4, 126);
-			this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.iconButton2.Location = new System.Drawing.Point(-3, 102);
 			this.iconButton2.Name = "iconButton2";
 			this.iconButton2.Rotation = 1D;
-			this.iconButton2.Size = new System.Drawing.Size(189, 53);
+			this.iconButton2.Size = new System.Drawing.Size(142, 43);
 			this.iconButton2.TabIndex = 14;
 			this.iconButton2.Text = "Booked";
 			this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -670,11 +635,10 @@
 			this.iconButton1.IconColor = System.Drawing.Color.White;
 			this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
 			this.iconButton1.IconSize = 32;
-			this.iconButton1.Location = new System.Drawing.Point(-3, 38);
-			this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.iconButton1.Location = new System.Drawing.Point(-2, 31);
 			this.iconButton1.Name = "iconButton1";
 			this.iconButton1.Rotation = 1D;
-			this.iconButton1.Size = new System.Drawing.Size(187, 53);
+			this.iconButton1.Size = new System.Drawing.Size(140, 43);
 			this.iconButton1.TabIndex = 13;
 			this.iconButton1.Text = "Total Staff";
 			this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -686,10 +650,9 @@
 			this.label9.AutoSize = true;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label9.Location = new System.Drawing.Point(29, 16);
-			this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label9.Location = new System.Drawing.Point(22, 13);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(131, 25);
+			this.label9.Size = new System.Drawing.Size(105, 20);
 			this.label9.TabIndex = 6;
 			this.label9.Text = "Total Counter";
 			// 
@@ -716,21 +679,21 @@
 			this.datahoadon.EnableHeadersVisualStyles = false;
 			this.datahoadon.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
 			this.datahoadon.HeaderForeColor = System.Drawing.Color.White;
-			this.datahoadon.Location = new System.Drawing.Point(336, 506);
-			this.datahoadon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.datahoadon.Location = new System.Drawing.Point(252, 411);
+			this.datahoadon.Margin = new System.Windows.Forms.Padding(2);
 			this.datahoadon.Name = "datahoadon";
 			this.datahoadon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.datahoadon.RowHeadersWidth = 62;
 			this.datahoadon.RowTemplate.Height = 28;
-			this.datahoadon.Size = new System.Drawing.Size(1172, 238);
+			this.datahoadon.Size = new System.Drawing.Size(879, 193);
 			this.datahoadon.TabIndex = 24;
 			// 
 			// Dashboard
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.ClientSize = new System.Drawing.Size(1533, 766);
+			this.ClientSize = new System.Drawing.Size(1150, 622);
 			this.Controls.Add(this.datahoadon);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel6);
@@ -739,7 +702,7 @@
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Dashboard";
 			this.Text = "Dashboard";
 			this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -799,13 +762,13 @@
 		private FontAwesome.Sharp.IconButton iconButton1;
 		private System.Windows.Forms.Label label9;
 		private Bunifu.Framework.UI.BunifuCustomDataGrid datahoadon;
-		private FontAwesome.Sharp.IconButton ExportDataBtn;
 		private Bunifu.Framework.UI.BunifuDatepicker dtpNgay;
 		private System.Windows.Forms.Panel panel7;
 		private System.Windows.Forms.PictureBox pictureBox4;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbPTEM;
 		private System.Windows.Forms.Label labelemployeesalary;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label labeltotalprofit;
+		private FontAwesome.Sharp.IconButton ExportDataBtn;
 	}
 }

@@ -1,9 +1,11 @@
 ﻿using HotelManager.utils;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -90,13 +92,79 @@ namespace HotelManager.pages
              $"FROM HOADON where YEAR(NGAYDI)={dtpNgay.Value.Year} AND MONTH(NGAYDI) ={dtpNgay.Value.Month}");
             datahoadon.DataSource = dt;
 
+			int currentYear = dtpNgay.Value.Year;
+			int currentMonth = dtpNgay.Value.Month;
 
-            //hiển thị luong nhan vien
-            labelemployeesalary.Text = pro.RenderID($"select dbo.LUONGF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			int previousMonth;
+			int previousYear;
+
+
+			// Tính tháng và năm của tháng trước đó
+			if (currentMonth == 1) // Nếu tháng hiện tại là tháng 1
+			{
+				previousMonth = 12; // Tháng trước đó là tháng 12
+				previousYear = currentYear - 1; // Năm trước đó
+			}
+			else
+			{
+				previousMonth = currentMonth - 1; // Tháng trước đó
+				previousYear = currentYear; // Năm hiện tại
+			}
+			/*int labelemployeesalary_1 = Convert.ToInt32( pro.RenderID($"select dbo.LUONGF({previousYear},{previousMonth})"));*/
+			string lbTotalReven_1 = pro.RenderID($"select dbo.DOANHTHUF({previousYear},{previousMonth})");
 			lbTotalReven.Text = pro.RenderID($"select dbo.DOANHTHUF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
-			lbNBO.Text = pro.RenderID($"select dbo.NUMBERORDER({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
-			labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
+			double y = Math.Ceiling((double.Parse(lbTotalReven.Text) - double.Parse(lbTotalReven_1)) / double.Parse(lbTotalReven_1) * 100);
+			if (y <= 0)
+			{
+				lbPTTR.ForeColor = Color.Red;
+				lbPTTR.Text = $"{y}%";
+			}
+			else
+			{
+				lbPTTR.ForeColor = Color.LimeGreen;
+				lbPTTR.Text = $"+{y}%";
+			}
 
+			//hiển thị luong nhan vien
+			string labelemployeesalary_1 = pro.RenderID($"select dbo.LUONGF({previousYear},{previousMonth})");
+			labelemployeesalary.Text = pro.RenderID($"select dbo.LUONGF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			 y = Math.Ceiling((double.Parse(labelemployeesalary.Text) - double.Parse(labelemployeesalary_1)) / double.Parse(labelemployeesalary_1) * 100);
+			if (y <= 0)
+			{
+				lbPTEM.ForeColor = Color.Red;
+				lbPTEM.Text = $"{y}%";
+			}
+			else
+			{
+				lbPTEM.ForeColor = Color.LimeGreen;
+				lbPTEM.Text = $"+{y}%";
+			}
+			string lbNBO_1 = pro.RenderID($"select dbo.NUMBERORDER({previousYear},{previousMonth})");
+			lbNBO.Text = pro.RenderID($"select dbo.NUMBERORDER({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			y = Math.Ceiling((double.Parse(lbNBO.Text) - double.Parse(lbNBO_1)) / double.Parse(lbNBO_1) * 100);
+			if (y <= 0)
+			{
+				lbPTNB.ForeColor = Color.Red;
+				lbPTNB.Text = $"{y}%";
+			}
+			else
+			{
+				lbPTNB.ForeColor = Color.LimeGreen;
+				lbPTNB.Text = $"+{y}%";
+			}
+			double labeltotalprofit_1 = (double.Parse(lbTotalReven_1) - double.Parse(labelemployeesalary_1));
+			labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
+			y = Math.Ceiling((double.Parse(labeltotalprofit.Text) - labeltotalprofit_1 / labeltotalprofit_1 * 100));
+			if (y <= 0)
+			{
+				lbPTTP.ForeColor = Color.Red;
+				lbPTTP.Text = $"{y}%";
+			}
+			else
+			{
+				lbPTTP.ForeColor = Color.LimeGreen;
+				lbPTTP.Text = $"+{y}%";
+			}
 			dt = pro.GetData($"select * from LOINHUANNAM({dtpNgay.Value.Year})");
 			chart1.DataSource = dt;
 			chart1.Series["Series1"].XValueMember = "THANG";
@@ -104,39 +172,63 @@ namespace HotelManager.pages
 			chart1.DataBind();
 		}
 
+		private void ExportDataBtn_Click(object sender, EventArgs e)
+		{
+				System.Data.DataTable dt = (System.Data.DataTable)datahoadon.DataSource;
+				if (dt != null && dt.Rows.Count > 0)
+				{
+					using (var package = new ExcelPackage())
+					{
 
-        private void btnEX_Click(object sender, EventArgs e)
-        {
-           /* ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-            System.Data.DataTable dt = (System.Data.DataTable)dgvLuong.DataSource;
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                using (var package = new ExcelPackage())
-                {
-                    // Tạo một trang tính mới
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
+						// Tạo một trang tính mới
+						ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
 
-                    // Đặt dữ liệu từ DataTable vào trang tính
-                    worksheet.Cells["A1"].LoadFromDataTable(dt, true);
+						int month = dtpNgay.Value.Month;
+						int year = dtpNgay.Value.Year;
 
-                    // Lưu tệp Excel
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
-                    saveFileDialog.Filter = "Tệp Excel|*.xlsx";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
-                        package.SaveAs(fileInfo);
-                        MessageBox.Show("Dữ liệu đã được lưu thành công vào tệp Excel.");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu để lưu.");
-            }*/
-        }
+						worksheet.Cells["A1:G1"].Merge = true;
+						worksheet.Cells["A1:G1"].Value = $"Dashboard {month}-{year}";
+						worksheet.Cells["A1:G1"].Style.Font.Size = 18;
+						worksheet.Cells["A1:G1"].Style.Font.Bold = true;
+						worksheet.Cells["A1:G1"].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
 
+						worksheet.Cells["A3:B3"].Merge = true;
+						worksheet.Cells["A3:B3"].Value = "Number of Order:";
+						worksheet.Cells["C3:D3"].Merge = true;
+						worksheet.Cells["C3:D3"].Value = lbNBO.Text;
 
-	
-	}
+						worksheet.Cells["E3:F3"].Merge = true;
+						worksheet.Cells["E3:F3"].Value = "Total Revenue:";
+						worksheet.Cells["G3:H3"].Merge = true;
+						worksheet.Cells["G3:H3"].Value = lbTotalReven.Text;
+
+						worksheet.Cells["A4:B4"].Merge = true;
+						worksheet.Cells["A4:B4"].Value = "Employ salary:";
+						worksheet.Cells["C4:D4"].Merge = true;
+						worksheet.Cells["C4:D4"].Value = labelemployeesalary.Text;
+
+						worksheet.Cells["E4:F4"].Merge = true;
+						worksheet.Cells["E4:F4"].Value = "Total Profit:";
+						worksheet.Cells["G4:H4"].Merge = true;
+						worksheet.Cells["G4:H4"].Value = labeltotalprofit.Text;
+						// Đặt dữ liệu từ DataTable vào trang tính
+						worksheet.Cells["A6"].LoadFromDataTable(dt, true);
+
+						// Lưu tệp Excel
+						SaveFileDialog saveFileDialog = new SaveFileDialog();
+						saveFileDialog.Filter = "Tệp Excel|*.xlsx";
+						if (saveFileDialog.ShowDialog() == DialogResult.OK)
+						{
+							FileInfo file = new FileInfo(saveFileDialog.FileName);
+							package.SaveAs(file);
+							MessageBox.Show("Dữ liệu đã được lưu thành công vào tệp Excel.");
+						}
+					}
+				}
+				else
+				{
+					MessageBox.Show("danh sách trống");
+				}
+			}
+		}
 }
