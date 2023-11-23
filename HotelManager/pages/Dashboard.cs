@@ -6,9 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
 using OfficeOpenXml;
-
-
-
+using System.Web.UI.WebControls;
 
 namespace HotelManager.pages
 {
@@ -67,10 +65,10 @@ namespace HotelManager.pages
             chart2.Series["Series1"].Points.DataBind(dt.AsEnumerable(), "HOTEN", "SoLanDen", "");
 
             //hiển thị luong nhan vien
-            lbPTEM.Text = pro.RenderID("select dbo.LUONGF(year(getdate()),month(getdate()))");
+            labelemployeesalary.Text = pro.RenderID("select dbo.LUONGF(year(getdate()),month(getdate()))");
             lbTotalReven.Text= pro.RenderID("select dbo.DOANHTHUF(year(getdate()),month(getdate()))");
             lbNBO.Text = pro.RenderID("select dbo.NUMBERORDER(year(getdate()),month(getdate()))");
-            labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(lbPTEM.Text)).ToString();
+            labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
 
 			dt = pro.GetData("select * from LOINHUANNAM(year(getdate()))");
 			chart1.DataSource = dt;
@@ -152,8 +150,8 @@ namespace HotelManager.pages
 
 			//hiển thị luong nhan vien
 			string labelemployeesalary_1 = pro.RenderID($"select dbo.LUONGF({previousYear},{previousMonth})");
-			lbPTEM.Text = pro.RenderID($"select dbo.LUONGF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
-			y = Math.Ceiling((double.Parse(lbPTEM.Text) - double.Parse(labelemployeesalary_1)) / double.Parse(labelemployeesalary_1) * 100);
+			labelemployeesalary.Text = pro.RenderID($"select dbo.LUONGF({dtpNgay.Value.Year},{dtpNgay.Value.Month})");
+			y = Math.Ceiling((double.Parse(labelemployeesalary.Text) - double.Parse(labelemployeesalary_1)) / double.Parse(labelemployeesalary_1) * 100);
 			if (y <= 0)
 			{
 				lbPTEM.ForeColor = Color.Red;
@@ -178,7 +176,7 @@ namespace HotelManager.pages
 				lbPTNB.Text = $"+{y}%";
 			}
 			double labeltotalprofit_1 = (double.Parse(lbTotalReven_1) - double.Parse(labelemployeesalary_1));
-			labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(lbPTEM.Text)).ToString();
+			labeltotalprofit.Text = (double.Parse(lbTotalReven.Text) - double.Parse(labelemployeesalary.Text)).ToString();
 			y = Math.Ceiling((double.Parse(labeltotalprofit.Text) - labeltotalprofit_1 / labeltotalprofit_1 * 100));
 			if (y <= 0)
 			{
@@ -230,7 +228,7 @@ namespace HotelManager.pages
 					worksheet.Cells["A4:B4"].Merge = true;
 					worksheet.Cells["A4:B4"].Value = "Employ salary:";
 					worksheet.Cells["C4:D4"].Merge = true;
-					worksheet.Cells["C4:D4"].Value = lbPTEM.Text;
+					worksheet.Cells["C4:D4"].Value = labelemployeesalary.Text;
 
 					worksheet.Cells["E4:F4"].Merge = true;
 					worksheet.Cells["E4:F4"].Value = "Total Profit:";
@@ -246,7 +244,8 @@ namespace HotelManager.pages
 					{
 						FileInfo file = new FileInfo(saveFileDialog.FileName);
 						package.SaveAs(file);
-						MessageBox.Show("Dữ liệu đã được lưu thành công vào tệp Excel.");
+
+						(new CustomMessageBox("Thông báo","Dữ liệu đã được lưu thành công vào tệp Excel.")).ShowDialog();
 					}
 				}
 			}

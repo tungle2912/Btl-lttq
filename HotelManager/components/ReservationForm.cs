@@ -23,7 +23,7 @@ namespace HotelManager.components
         private double? total=0,priceroom = 0,priceservice=0;
         private Boolean checkngaydi=false,checkservice=false,chekcsellclick=false;
 		private string[] servicearr = new string[100];
-        private int Rentalperiod=0;
+        private int Rentalperiod=0,a=0,x=0;
 
 		private void OnDataAdded()
         {
@@ -218,7 +218,7 @@ namespace HotelManager.components
 
 		private void PhoneNumberTextBox_OnValueChanged(object sender, EventArgs e)
 		{
-            int x = 0;
+          
             if (x > 0)
             {
 				if (!int.TryParse(PhoneNumberTextBox.Text, out int result) && PhoneNumberTextBox.Text.Trim() != "")
@@ -233,17 +233,19 @@ namespace HotelManager.components
 
 		private void roomNumberTextBox_onItemSelected(object sender, EventArgs e)
         {
-            int a = 0;
-            if (a > 0)
-            {
+       
             roomNumber = int.Parse(roomNumberCBBox.selectedValue.ToString());
             string price = db.RenderID("SELECT dbo.price('"+roomNumberCBBox.selectedValue.ToString()+"')");
-            PriceTextBox.Text= price;	
+            PriceTextBox.Text= price;
+            if (a > 0)
+            {
 			total = total + (float.Parse(price) - priceroom) * Rentalperiod;
-			Totallabel.Text = total.ToString();
-			priceroom =float.Parse(price);
+
             }
             a++;
+			Totallabel.Text = total.ToString();
+			priceroom =float.Parse(price);
+            
         }
 
 
@@ -273,6 +275,7 @@ namespace HotelManager.components
              System.Data.DataTable x= db.GetData("SELECT * FROM CHITIETHOADON WHERE MAHD=N'" + BillIDLabel.Text + "' AND MADV=dbo.RenderMaDV(N'"+ServiceCBBox.selectedValue.ToString()+"')");
             if (x.Rows.Count ==0)
             {
+                    priceservice = 0;
                 db.MutateData("INSERT INTO CHITIETHOADON (MACTHD, MAHD, MADV, SOPHONG,GIAPHONG, GIADV) VALUES( dbo.CreateMaCTHD(),'" + BillIDLabel.Text + "',dbo.RenderMaDV(N'" + ServiceCBBox.selectedValue.ToString() + "'),'" +roomNumber + "','" + PriceTextBox.Text + "','" + PriceServiceTextbox.Text + "')");
                 updadedatagrid();
 				}
@@ -311,9 +314,32 @@ namespace HotelManager.components
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            CustomMessageBox a = new CustomMessageBox("Xác nhận", "Bạn có muốn xóa hóa đơn này ?");
-            a.ShowDialog();
-        }
+            try
+            {
+			    CustomMessageBox c = new CustomMessageBox("Xác nhận", "Bạn có muốn xóa hóa đơn này ?","Yes","No");
+
+				c.YesClicked += (s, args) =>
+				{
+					db.MutateData($"DELETE CHITIETHOADON WHERE MAHD = {BillIDLabel.Text}");
+					db.MutateData($"DELETE HOADON WHERE MAHD = {BillIDLabel.Text}");
+					this.Close();
+				};
+
+				c.NoClicked += (s, args) =>
+				{
+					return;
+				};
+
+				c.ShowDialog();
+
+			}
+			catch
+            {
+				CustomMessageBox c = new CustomMessageBox("Xác nhận", "Lỗi! Không thể xóa chi tiết hóa đơn?");
+                c.ShowDialog();
+			}
+
+		}
 
 		private void ServiceDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -428,8 +454,8 @@ namespace HotelManager.components
 			// 3. Filter to get all .xls extension
 			saveFileDialog.FilterIndex = 1;
 
-
-			saveFileDialog.FileName = $"{customerName}.xlsx";
+            string billID = BillIDLabel.Text;
+			saveFileDialog.FileName = $"{billID}_{customerName}.xlsx";
             try {
 				if (saveFileDialog.ShowDialog() == DialogResult.OK)
 				{
@@ -559,6 +585,7 @@ namespace HotelManager.components
                 {
                     db.MutateData("INSERT INTO CHITIETHOADON (MACTHD, MAHD,SOPHONG,GIAPHONG) VALUES( dbo.CreateMaCTHD(),'" + BillIDLabel.Text + "','" + roomNumberCBBox.selectedValue.ToString() + "','" + PriceTextBox.Text + "')");
                 }
+				priceservice = 0;
 				new CustomMessageBox("Notification", "Thêm thông tin thành công").ShowDialog();
 				updadedatagrid();
 			}else

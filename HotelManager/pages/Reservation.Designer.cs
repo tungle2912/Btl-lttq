@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservation));
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
 			this.allFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
 			this.checkoutFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
 			this.checkinFilterButton = new Bunifu.Framework.UI.BunifuThinButton2();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
+			this.BillSearchTextBox = new System.Windows.Forms.TextBox();
 			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.addGuestButton = new FontAwesome.Sharp.IconButton();
 			this.reservationDataGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-			this.BillSearchTextBox = new System.Windows.Forms.TextBox();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.reservationDataGridView)).BeginInit();
@@ -61,12 +61,28 @@
 			this.panel1.Controls.Add(this.panel2);
 			this.panel1.Controls.Add(this.addGuestButton);
 			this.panel1.Controls.Add(this.reservationDataGridView);
-			this.panel1.Location = new System.Drawing.Point(28, 31);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.panel1.Location = new System.Drawing.Point(25, 25);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1533, 934);
+			this.panel1.Size = new System.Drawing.Size(1363, 747);
 			this.panel1.TabIndex = 3;
 			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+			// 
+			// bunifuDatepicker1
+			// 
+			this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
+			this.bunifuDatepicker1.BorderRadius = 0;
+			this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
+			this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.bunifuDatepicker1.FormatCustom = null;
+			this.bunifuDatepicker1.Location = new System.Drawing.Point(539, 93);
+			this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bunifuDatepicker1.Name = "bunifuDatepicker1";
+			this.bunifuDatepicker1.Size = new System.Drawing.Size(354, 47);
+			this.bunifuDatepicker1.TabIndex = 2;
+			this.bunifuDatepicker1.Value = new System.DateTime(2023, 11, 8, 14, 52, 17, 840);
+			this.bunifuDatepicker1.onValueChanged += new System.EventHandler(this.bunifuDatepicker1_onValueChanged);
+			this.bunifuDatepicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuDatepicker1_KeyPress);
 			// 
 			// allFilterButton
 			// 
@@ -86,10 +102,10 @@
 			this.allFilterButton.IdleFillColor = System.Drawing.Color.White;
 			this.allFilterButton.IdleForecolor = System.Drawing.Color.SeaGreen;
 			this.allFilterButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-			this.allFilterButton.Location = new System.Drawing.Point(32, 115);
-			this.allFilterButton.Margin = new System.Windows.Forms.Padding(6);
+			this.allFilterButton.Location = new System.Drawing.Point(28, 92);
+			this.allFilterButton.Margin = new System.Windows.Forms.Padding(5);
 			this.allFilterButton.Name = "allFilterButton";
-			this.allFilterButton.Size = new System.Drawing.Size(158, 69);
+			this.allFilterButton.Size = new System.Drawing.Size(140, 55);
 			this.allFilterButton.TabIndex = 15;
 			this.allFilterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.allFilterButton.Click += new System.EventHandler(this.allFilterButton_Click_1);
@@ -112,10 +128,10 @@
 			this.checkoutFilterButton.IdleFillColor = System.Drawing.Color.White;
 			this.checkoutFilterButton.IdleForecolor = System.Drawing.Color.SeaGreen;
 			this.checkoutFilterButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-			this.checkoutFilterButton.Location = new System.Drawing.Point(372, 115);
-			this.checkoutFilterButton.Margin = new System.Windows.Forms.Padding(6);
+			this.checkoutFilterButton.Location = new System.Drawing.Point(331, 92);
+			this.checkoutFilterButton.Margin = new System.Windows.Forms.Padding(5);
 			this.checkoutFilterButton.Name = "checkoutFilterButton";
-			this.checkoutFilterButton.Size = new System.Drawing.Size(158, 69);
+			this.checkoutFilterButton.Size = new System.Drawing.Size(140, 55);
 			this.checkoutFilterButton.TabIndex = 16;
 			this.checkoutFilterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.checkoutFilterButton.Click += new System.EventHandler(this.checkoutFilterButton_Click_1);
@@ -138,10 +154,10 @@
 			this.checkinFilterButton.IdleFillColor = System.Drawing.Color.White;
 			this.checkinFilterButton.IdleForecolor = System.Drawing.Color.SeaGreen;
 			this.checkinFilterButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-			this.checkinFilterButton.Location = new System.Drawing.Point(201, 115);
-			this.checkinFilterButton.Margin = new System.Windows.Forms.Padding(6);
+			this.checkinFilterButton.Location = new System.Drawing.Point(179, 92);
+			this.checkinFilterButton.Margin = new System.Windows.Forms.Padding(5);
 			this.checkinFilterButton.Name = "checkinFilterButton";
-			this.checkinFilterButton.Size = new System.Drawing.Size(158, 69);
+			this.checkinFilterButton.Size = new System.Drawing.Size(140, 55);
 			this.checkinFilterButton.TabIndex = 17;
 			this.checkinFilterButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.checkinFilterButton.Click += new System.EventHandler(this.checkinFilterButton_Click);
@@ -151,26 +167,27 @@
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
 			this.panel2.Controls.Add(this.BillSearchTextBox);
 			this.panel2.Controls.Add(this.iconButton2);
-			this.panel2.Location = new System.Drawing.Point(30, 29);
+			this.panel2.Location = new System.Drawing.Point(27, 23);
+			this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(500, 60);
+			this.panel2.Size = new System.Drawing.Size(444, 48);
 			this.panel2.TabIndex = 14;
 			// 
-			// bunifuDatepicker1
+			// BillSearchTextBox
 			// 
-			this.bunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
-			this.bunifuDatepicker1.BorderRadius = 0;
-			this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-			this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-			this.bunifuDatepicker1.FormatCustom = null;
-			this.bunifuDatepicker1.Location = new System.Drawing.Point(606, 116);
-			this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-			this.bunifuDatepicker1.Size = new System.Drawing.Size(300, 59);
-			this.bunifuDatepicker1.TabIndex = 2;
-			this.bunifuDatepicker1.Value = new System.DateTime(2023, 11, 8, 14, 52, 17, 840);
-			this.bunifuDatepicker1.onValueChanged += new System.EventHandler(this.bunifuDatepicker1_onValueChanged);
-			this.bunifuDatepicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuDatepicker1_KeyPress);
+			this.BillSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.BillSearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.BillSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.BillSearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.BillSearchTextBox.ForeColor = System.Drawing.Color.White;
+			this.BillSearchTextBox.Location = new System.Drawing.Point(60, 11);
+			this.BillSearchTextBox.Margin = new System.Windows.Forms.Padding(4);
+			this.BillSearchTextBox.Name = "BillSearchTextBox";
+			this.BillSearchTextBox.Size = new System.Drawing.Size(381, 23);
+			this.BillSearchTextBox.TabIndex = 12;
+			this.BillSearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuDatepicker1_KeyPress);
 			// 
 			// iconButton2
 			// 
@@ -182,9 +199,10 @@
 			this.iconButton2.IconColor = System.Drawing.Color.White;
 			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.iconButton2.IconSize = 28;
-			this.iconButton2.Location = new System.Drawing.Point(3, 3);
+			this.iconButton2.Location = new System.Drawing.Point(3, 2);
+			this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Size = new System.Drawing.Size(66, 57);
+			this.iconButton2.Size = new System.Drawing.Size(59, 46);
 			this.iconButton2.TabIndex = 1;
 			this.iconButton2.UseVisualStyleBackColor = true;
 			this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
@@ -202,11 +220,11 @@
 			this.addGuestButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.addGuestButton.IconSize = 28;
 			this.addGuestButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.addGuestButton.Location = new System.Drawing.Point(1271, 115);
-			this.addGuestButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.addGuestButton.Location = new System.Drawing.Point(1130, 92);
+			this.addGuestButton.Margin = new System.Windows.Forms.Padding(4);
 			this.addGuestButton.Name = "addGuestButton";
-			this.addGuestButton.Padding = new System.Windows.Forms.Padding(9, 3, 9, 3);
-			this.addGuestButton.Size = new System.Drawing.Size(231, 60);
+			this.addGuestButton.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+			this.addGuestButton.Size = new System.Drawing.Size(205, 48);
 			this.addGuestButton.TabIndex = 13;
 			this.addGuestButton.Text = "Add Reservation";
 			this.addGuestButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -216,8 +234,8 @@
 			// 
 			// reservationDataGridView
 			// 
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.reservationDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.reservationDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.reservationDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -226,74 +244,58 @@
 			this.reservationDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.reservationDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.reservationDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
-			dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 12F);
-			dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-			dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.reservationDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.reservationDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.reservationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.reservationDataGridView.Cursor = System.Windows.Forms.Cursors.Arrow;
-			dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.reservationDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.reservationDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
 			this.reservationDataGridView.DoubleBuffered = true;
 			this.reservationDataGridView.EnableHeadersVisualStyles = false;
 			this.reservationDataGridView.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
 			this.reservationDataGridView.HeaderForeColor = System.Drawing.Color.White;
-			this.reservationDataGridView.Location = new System.Drawing.Point(30, 203);
-			this.reservationDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.reservationDataGridView.Location = new System.Drawing.Point(27, 162);
+			this.reservationDataGridView.Margin = new System.Windows.Forms.Padding(4);
 			this.reservationDataGridView.Name = "reservationDataGridView";
 			this.reservationDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.reservationDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-			dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-			dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.reservationDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.reservationDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.reservationDataGridView.RowHeadersWidth = 51;
 			this.reservationDataGridView.RowTemplate.Height = 42;
-			this.reservationDataGridView.Size = new System.Drawing.Size(1473, 700);
+			this.reservationDataGridView.Size = new System.Drawing.Size(1309, 560);
 			this.reservationDataGridView.TabIndex = 12;
 			this.reservationDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGridView_CellClick);
 			this.reservationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reservationDataGridView_CellContentClick);
 			// 
-			// BillSearchTextBox
-			// 
-			this.BillSearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.BillSearchTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-			this.BillSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.BillSearchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.BillSearchTextBox.ForeColor = System.Drawing.Color.White;
-			this.BillSearchTextBox.Location = new System.Drawing.Point(67, 14);
-			this.BillSearchTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.BillSearchTextBox.Name = "BillSearchTextBox";
-			this.BillSearchTextBox.Size = new System.Drawing.Size(429, 28);
-			this.BillSearchTextBox.TabIndex = 12;
-			this.BillSearchTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuDatepicker1_KeyPress);
-			// 
 			// Reservation
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(1588, 1000);
+			this.ClientSize = new System.Drawing.Size(1412, 800);
 			this.Controls.Add(this.panel1);
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Reservation";
 			this.Text = "Reservation";
 			this.Load += new System.EventHandler(this.Reservation_Load);

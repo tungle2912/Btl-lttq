@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.guestLabel = new System.Windows.Forms.Label();
 			this.cancelButton = new System.Windows.Forms.Button();
@@ -76,10 +76,10 @@
 			this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.AddButton.ForeColor = System.Drawing.Color.White;
-			this.AddButton.Location = new System.Drawing.Point(712, 945);
-			this.AddButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.AddButton.Location = new System.Drawing.Point(633, 756);
+			this.AddButton.Margin = new System.Windows.Forms.Padding(4);
 			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(248, 61);
+			this.AddButton.Size = new System.Drawing.Size(220, 49);
 			this.AddButton.TabIndex = 64;
 			this.AddButton.Text = "Add";
 			this.AddButton.UseVisualStyleBackColor = false;
@@ -90,9 +90,9 @@
 			this.guestLabel.AutoSize = true;
 			this.guestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
 			this.guestLabel.ForeColor = System.Drawing.Color.White;
-			this.guestLabel.Location = new System.Drawing.Point(845, 94);
+			this.guestLabel.Location = new System.Drawing.Point(751, 75);
 			this.guestLabel.Name = "guestLabel";
-			this.guestLabel.Size = new System.Drawing.Size(138, 32);
+			this.guestLabel.Size = new System.Drawing.Size(116, 29);
 			this.guestLabel.TabIndex = 63;
 			this.guestLabel.Text = "ADD BILL";
 			this.guestLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,10 +104,10 @@
 			this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.cancelButton.ForeColor = System.Drawing.Color.White;
-			this.cancelButton.Location = new System.Drawing.Point(984, 945);
-			this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.cancelButton.Location = new System.Drawing.Point(875, 756);
+			this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
 			this.cancelButton.Name = "cancelButton";
-			this.cancelButton.Size = new System.Drawing.Size(248, 61);
+			this.cancelButton.Size = new System.Drawing.Size(220, 49);
 			this.cancelButton.TabIndex = 59;
 			this.cancelButton.Text = "Cancel";
 			this.cancelButton.UseVisualStyleBackColor = false;
@@ -120,10 +120,10 @@
 			this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.deleteButton.ForeColor = System.Drawing.Color.White;
-			this.deleteButton.Location = new System.Drawing.Point(712, 1029);
-			this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.deleteButton.Location = new System.Drawing.Point(633, 823);
+			this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
 			this.deleteButton.Name = "deleteButton";
-			this.deleteButton.Size = new System.Drawing.Size(519, 61);
+			this.deleteButton.Size = new System.Drawing.Size(461, 49);
 			this.deleteButton.TabIndex = 73;
 			this.deleteButton.Text = "Delete";
 			this.deleteButton.UseVisualStyleBackColor = false;
@@ -135,13 +135,13 @@
 			this.roomNumberCBBox.BorderRadius = 3;
 			this.roomNumberCBBox.ForeColor = System.Drawing.Color.White;
 			this.roomNumberCBBox.Items = new string[0];
-			this.roomNumberCBBox.Location = new System.Drawing.Point(863, 198);
-			this.roomNumberCBBox.Margin = new System.Windows.Forms.Padding(6);
+			this.roomNumberCBBox.Location = new System.Drawing.Point(767, 158);
+			this.roomNumberCBBox.Margin = new System.Windows.Forms.Padding(5);
 			this.roomNumberCBBox.Name = "roomNumberCBBox";
 			this.roomNumberCBBox.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
 			this.roomNumberCBBox.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
 			this.roomNumberCBBox.selectedIndex = -1;
-			this.roomNumberCBBox.Size = new System.Drawing.Size(328, 54);
+			this.roomNumberCBBox.Size = new System.Drawing.Size(292, 43);
 			this.roomNumberCBBox.TabIndex = 74;
 			this.roomNumberCBBox.onItemSelected += new System.EventHandler(this.roomNumberTextBox_onItemSelected);
 			// 
@@ -150,9 +150,9 @@
 			this.bunifuCustomLabel7.AutoSize = true;
 			this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel7.Location = new System.Drawing.Point(680, 206);
+			this.bunifuCustomLabel7.Location = new System.Drawing.Point(604, 165);
 			this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-			this.bunifuCustomLabel7.Size = new System.Drawing.Size(152, 23);
+			this.bunifuCustomLabel7.Size = new System.Drawing.Size(128, 21);
 			this.bunifuCustomLabel7.TabIndex = 115;
 			this.bunifuCustomLabel7.Text = "Room Number";
 			// 
@@ -168,10 +168,10 @@
 			this.ageTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.ageTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.ageTextBox.LineThickness = 4;
-			this.ageTextBox.Location = new System.Drawing.Point(244, 414);
-			this.ageTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.ageTextBox.Location = new System.Drawing.Point(217, 331);
+			this.ageTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.ageTextBox.Name = "ageTextBox";
-			this.ageTextBox.Size = new System.Drawing.Size(306, 65);
+			this.ageTextBox.Size = new System.Drawing.Size(272, 52);
 			this.ageTextBox.TabIndex = 121;
 			this.ageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.ageTextBox.OnValueChanged += new System.EventHandler(this.ageTextBox_OnValueChanged);
@@ -188,10 +188,10 @@
 			this.addressTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.addressTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.addressTextBox.LineThickness = 4;
-			this.addressTextBox.Location = new System.Drawing.Point(244, 541);
-			this.addressTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.addressTextBox.Location = new System.Drawing.Point(217, 433);
+			this.addressTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.addressTextBox.Name = "addressTextBox";
-			this.addressTextBox.Size = new System.Drawing.Size(306, 65);
+			this.addressTextBox.Size = new System.Drawing.Size(272, 52);
 			this.addressTextBox.TabIndex = 120;
 			this.addressTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
@@ -207,10 +207,10 @@
 			this.nameTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.nameTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.nameTextBox.LineThickness = 4;
-			this.nameTextBox.Location = new System.Drawing.Point(244, 291);
-			this.nameTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.nameTextBox.Location = new System.Drawing.Point(217, 233);
+			this.nameTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.nameTextBox.Name = "nameTextBox";
-			this.nameTextBox.Size = new System.Drawing.Size(306, 65);
+			this.nameTextBox.Size = new System.Drawing.Size(272, 52);
 			this.nameTextBox.TabIndex = 122;
 			this.nameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
@@ -221,10 +221,10 @@
 			this.arriveTimeDatepicker.ForeColor = System.Drawing.Color.White;
 			this.arriveTimeDatepicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.arriveTimeDatepicker.FormatCustom = null;
-			this.arriveTimeDatepicker.Location = new System.Drawing.Point(863, 438);
-			this.arriveTimeDatepicker.Margin = new System.Windows.Forms.Padding(6);
+			this.arriveTimeDatepicker.Location = new System.Drawing.Point(767, 350);
+			this.arriveTimeDatepicker.Margin = new System.Windows.Forms.Padding(5);
 			this.arriveTimeDatepicker.Name = "arriveTimeDatepicker";
-			this.arriveTimeDatepicker.Size = new System.Drawing.Size(328, 62);
+			this.arriveTimeDatepicker.Size = new System.Drawing.Size(292, 50);
 			this.arriveTimeDatepicker.TabIndex = 124;
 			this.arriveTimeDatepicker.Value = new System.DateTime(2023, 11, 3, 0, 0, 0, 0);
 			this.arriveTimeDatepicker.onValueChanged += new System.EventHandler(this.arriveTimeDatepicker_onValueChanged);
@@ -234,9 +234,9 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(680, 448);
+			this.label2.Location = new System.Drawing.Point(604, 358);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(115, 23);
+			this.label2.Size = new System.Drawing.Size(100, 21);
 			this.label2.TabIndex = 125;
 			this.label2.Text = "Arrive Time";
 			// 
@@ -245,9 +245,9 @@
 			this.bunifuCustomLabel8.AutoSize = true;
 			this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel8.Location = new System.Drawing.Point(78, 815);
+			this.bunifuCustomLabel8.Location = new System.Drawing.Point(69, 652);
 			this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-			this.bunifuCustomLabel8.Size = new System.Drawing.Size(109, 23);
+			this.bunifuCustomLabel8.Size = new System.Drawing.Size(90, 21);
 			this.bunifuCustomLabel8.TabIndex = 139;
 			this.bunifuCustomLabel8.Text = "Employee";
 			// 
@@ -256,9 +256,9 @@
 			this.bunifuCustomLabel10.AutoSize = true;
 			this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel10.Location = new System.Drawing.Point(68, 206);
+			this.bunifuCustomLabel10.Location = new System.Drawing.Point(60, 165);
 			this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-			this.bunifuCustomLabel10.Size = new System.Drawing.Size(87, 23);
+			this.bunifuCustomLabel10.Size = new System.Drawing.Size(78, 21);
 			this.bunifuCustomLabel10.TabIndex = 127;
 			this.bunifuCustomLabel10.Text = "GuestID";
 			// 
@@ -267,9 +267,9 @@
 			this.bunifuCustomLabel2.AutoSize = true;
 			this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel2.Location = new System.Drawing.Point(68, 319);
+			this.bunifuCustomLabel2.Location = new System.Drawing.Point(60, 255);
 			this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-			this.bunifuCustomLabel2.Size = new System.Drawing.Size(71, 23);
+			this.bunifuCustomLabel2.Size = new System.Drawing.Size(61, 21);
 			this.bunifuCustomLabel2.TabIndex = 128;
 			this.bunifuCustomLabel2.Text = "Name";
 			// 
@@ -278,9 +278,9 @@
 			this.bunifuCustomLabel3.AutoSize = true;
 			this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel3.Location = new System.Drawing.Point(68, 448);
+			this.bunifuCustomLabel3.Location = new System.Drawing.Point(60, 358);
 			this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-			this.bunifuCustomLabel3.Size = new System.Drawing.Size(51, 23);
+			this.bunifuCustomLabel3.Size = new System.Drawing.Size(45, 21);
 			this.bunifuCustomLabel3.TabIndex = 129;
 			this.bunifuCustomLabel3.Text = "Age";
 			// 
@@ -289,9 +289,9 @@
 			this.bunifuCustomLabel4.AutoSize = true;
 			this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel4.Location = new System.Drawing.Point(68, 564);
+			this.bunifuCustomLabel4.Location = new System.Drawing.Point(60, 451);
 			this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-			this.bunifuCustomLabel4.Size = new System.Drawing.Size(88, 23);
+			this.bunifuCustomLabel4.Size = new System.Drawing.Size(77, 21);
 			this.bunifuCustomLabel4.TabIndex = 130;
 			this.bunifuCustomLabel4.Text = "Address";
 			// 
@@ -300,9 +300,9 @@
 			this.bunifuCustomLabel5.AutoSize = true;
 			this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel5.Location = new System.Drawing.Point(68, 695);
+			this.bunifuCustomLabel5.Location = new System.Drawing.Point(60, 556);
 			this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-			this.bunifuCustomLabel5.Size = new System.Drawing.Size(157, 23);
+			this.bunifuCustomLabel5.Size = new System.Drawing.Size(133, 21);
 			this.bunifuCustomLabel5.TabIndex = 131;
 			this.bunifuCustomLabel5.Text = "Phone Number";
 			// 
@@ -320,10 +320,10 @@
 			this.PriceTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.PriceTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.PriceTextBox.LineThickness = 4;
-			this.PriceTextBox.Location = new System.Drawing.Point(1482, 171);
-			this.PriceTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.PriceTextBox.Location = new System.Drawing.Point(1317, 137);
+			this.PriceTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.PriceTextBox.Name = "PriceTextBox";
-			this.PriceTextBox.Size = new System.Drawing.Size(328, 80);
+			this.PriceTextBox.Size = new System.Drawing.Size(292, 64);
 			this.PriceTextBox.TabIndex = 132;
 			this.PriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
@@ -340,10 +340,10 @@
 			this.guestIDTxt.LineIdleColor = System.Drawing.Color.Gray;
 			this.guestIDTxt.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.guestIDTxt.LineThickness = 4;
-			this.guestIDTxt.Location = new System.Drawing.Point(244, 165);
-			this.guestIDTxt.Margin = new System.Windows.Forms.Padding(6);
+			this.guestIDTxt.Location = new System.Drawing.Point(217, 132);
+			this.guestIDTxt.Margin = new System.Windows.Forms.Padding(5);
 			this.guestIDTxt.Name = "guestIDTxt";
-			this.guestIDTxt.Size = new System.Drawing.Size(306, 65);
+			this.guestIDTxt.Size = new System.Drawing.Size(272, 52);
 			this.guestIDTxt.TabIndex = 126;
 			this.guestIDTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
@@ -353,9 +353,9 @@
 			this.bunifuCustomLabel6.AutoSize = true;
 			this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel6.Location = new System.Drawing.Point(1326, 221);
+			this.bunifuCustomLabel6.Location = new System.Drawing.Point(1179, 177);
 			this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-			this.bunifuCustomLabel6.Size = new System.Drawing.Size(120, 23);
+			this.bunifuCustomLabel6.Size = new System.Drawing.Size(102, 21);
 			this.bunifuCustomLabel6.TabIndex = 135;
 			this.bunifuCustomLabel6.Text = "Price Room";
 			// 
@@ -372,53 +372,53 @@
 			this.employeeIDTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.employeeIDTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.employeeIDTextBox.LineThickness = 4;
-			this.employeeIDTextBox.Location = new System.Drawing.Point(244, 786);
-			this.employeeIDTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.employeeIDTextBox.Location = new System.Drawing.Point(217, 629);
+			this.employeeIDTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.employeeIDTextBox.Name = "employeeIDTextBox";
-			this.employeeIDTextBox.Size = new System.Drawing.Size(306, 65);
+			this.employeeIDTextBox.Size = new System.Drawing.Size(272, 52);
 			this.employeeIDTextBox.TabIndex = 136;
 			this.employeeIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// BillIDLabel
 			// 
 			this.BillIDLabel.AutoSize = true;
-			this.BillIDLabel.BackColor = System.Drawing.Color.Transparent;
+			this.BillIDLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
 			this.BillIDLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.BillIDLabel.ForeColor = System.Drawing.Color.White;
-			this.BillIDLabel.Location = new System.Drawing.Point(68, 101);
+			this.BillIDLabel.Location = new System.Drawing.Point(60, 81);
 			this.BillIDLabel.Name = "BillIDLabel";
-			this.BillIDLabel.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
-			this.BillIDLabel.Size = new System.Drawing.Size(24, 35);
+			this.BillIDLabel.Padding = new System.Windows.Forms.Padding(11, 5, 11, 5);
+			this.BillIDLabel.Size = new System.Drawing.Size(22, 31);
 			this.BillIDLabel.TabIndex = 140;
 			// 
 			// ServiceDataGrid
 			// 
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.ServiceDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.ServiceDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.ServiceDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
 			this.ServiceDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.ServiceDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.ServiceDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.ServiceDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.ServiceDataGrid.DoubleBuffered = true;
 			this.ServiceDataGrid.EnableHeadersVisualStyles = false;
 			this.ServiceDataGrid.HeaderBgColor = System.Drawing.Color.SeaGreen;
 			this.ServiceDataGrid.HeaderForeColor = System.Drawing.Color.White;
-			this.ServiceDataGrid.Location = new System.Drawing.Point(863, 564);
+			this.ServiceDataGrid.Location = new System.Drawing.Point(767, 451);
 			this.ServiceDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.ServiceDataGrid.Name = "ServiceDataGrid";
 			this.ServiceDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.ServiceDataGrid.RowHeadersWidth = 62;
 			this.ServiceDataGrid.RowTemplate.Height = 28;
-			this.ServiceDataGrid.Size = new System.Drawing.Size(948, 185);
+			this.ServiceDataGrid.Size = new System.Drawing.Size(843, 148);
 			this.ServiceDataGrid.TabIndex = 142;
 			this.ServiceDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceDataGrid_CellClick);
 			this.ServiceDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ServiceDataGrid_CellContentClick);
@@ -428,9 +428,9 @@
 			this.bunifuCustomLabel1.AutoSize = true;
 			this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel1.Location = new System.Drawing.Point(680, 564);
+			this.bunifuCustomLabel1.Location = new System.Drawing.Point(604, 451);
 			this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-			this.bunifuCustomLabel1.Size = new System.Drawing.Size(81, 23);
+			this.bunifuCustomLabel1.Size = new System.Drawing.Size(70, 21);
 			this.bunifuCustomLabel1.TabIndex = 143;
 			this.bunifuCustomLabel1.Text = "Service";
 			// 
@@ -440,13 +440,13 @@
 			this.ServiceCBBox.BorderRadius = 3;
 			this.ServiceCBBox.ForeColor = System.Drawing.Color.White;
 			this.ServiceCBBox.Items = new string[0];
-			this.ServiceCBBox.Location = new System.Drawing.Point(863, 324);
-			this.ServiceCBBox.Margin = new System.Windows.Forms.Padding(6);
+			this.ServiceCBBox.Location = new System.Drawing.Point(767, 259);
+			this.ServiceCBBox.Margin = new System.Windows.Forms.Padding(5);
 			this.ServiceCBBox.Name = "ServiceCBBox";
 			this.ServiceCBBox.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
 			this.ServiceCBBox.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
 			this.ServiceCBBox.selectedIndex = -1;
-			this.ServiceCBBox.Size = new System.Drawing.Size(328, 54);
+			this.ServiceCBBox.Size = new System.Drawing.Size(292, 43);
 			this.ServiceCBBox.TabIndex = 144;
 			this.ServiceCBBox.onItemSelected += new System.EventHandler(this.ServiceCBBox_onItemSelected);
 			// 
@@ -455,9 +455,9 @@
 			this.bunifuCustomLabel9.AutoSize = true;
 			this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel9.Location = new System.Drawing.Point(680, 319);
+			this.bunifuCustomLabel9.Location = new System.Drawing.Point(604, 255);
 			this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-			this.bunifuCustomLabel9.Size = new System.Drawing.Size(81, 23);
+			this.bunifuCustomLabel9.Size = new System.Drawing.Size(70, 21);
 			this.bunifuCustomLabel9.TabIndex = 145;
 			this.bunifuCustomLabel9.Text = "Service";
 			// 
@@ -467,9 +467,9 @@
 			this.bunifuCustomLabel11.AutoSize = true;
 			this.bunifuCustomLabel11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel11.Location = new System.Drawing.Point(1326, 334);
+			this.bunifuCustomLabel11.Location = new System.Drawing.Point(1179, 267);
 			this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-			this.bunifuCustomLabel11.Size = new System.Drawing.Size(134, 23);
+			this.bunifuCustomLabel11.Size = new System.Drawing.Size(115, 21);
 			this.bunifuCustomLabel11.TabIndex = 147;
 			this.bunifuCustomLabel11.Text = "Price Service";
 			// 
@@ -487,10 +487,10 @@
 			this.PriceServiceTextbox.LineIdleColor = System.Drawing.Color.Gray;
 			this.PriceServiceTextbox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.PriceServiceTextbox.LineThickness = 4;
-			this.PriceServiceTextbox.Location = new System.Drawing.Point(1482, 298);
-			this.PriceServiceTextbox.Margin = new System.Windows.Forms.Padding(6);
+			this.PriceServiceTextbox.Location = new System.Drawing.Point(1317, 238);
+			this.PriceServiceTextbox.Margin = new System.Windows.Forms.Padding(5);
 			this.PriceServiceTextbox.Name = "PriceServiceTextbox";
-			this.PriceServiceTextbox.Size = new System.Drawing.Size(328, 80);
+			this.PriceServiceTextbox.Size = new System.Drawing.Size(292, 64);
 			this.PriceServiceTextbox.TabIndex = 146;
 			this.PriceServiceTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
@@ -501,10 +501,10 @@
 			this.btnAddService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.btnAddService.ForeColor = System.Drawing.Color.White;
-			this.btnAddService.Location = new System.Drawing.Point(680, 695);
-			this.btnAddService.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.btnAddService.Location = new System.Drawing.Point(604, 556);
+			this.btnAddService.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAddService.Name = "btnAddService";
-			this.btnAddService.Size = new System.Drawing.Size(154, 51);
+			this.btnAddService.Size = new System.Drawing.Size(137, 41);
 			this.btnAddService.TabIndex = 148;
 			this.btnAddService.Text = "Add Service";
 			this.btnAddService.UseVisualStyleBackColor = false;
@@ -516,9 +516,9 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(1328, 448);
+			this.label1.Location = new System.Drawing.Point(1180, 358);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(121, 23);
+			this.label1.Size = new System.Drawing.Size(105, 21);
 			this.label1.TabIndex = 150;
 			this.label1.Text = "Leave Time";
 			// 
@@ -530,10 +530,10 @@
 			this.LeaveTimePicker.ForeColor = System.Drawing.Color.White;
 			this.LeaveTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.LeaveTimePicker.FormatCustom = null;
-			this.LeaveTimePicker.Location = new System.Drawing.Point(1482, 438);
-			this.LeaveTimePicker.Margin = new System.Windows.Forms.Padding(6);
+			this.LeaveTimePicker.Location = new System.Drawing.Point(1317, 350);
+			this.LeaveTimePicker.Margin = new System.Windows.Forms.Padding(5);
 			this.LeaveTimePicker.Name = "LeaveTimePicker";
-			this.LeaveTimePicker.Size = new System.Drawing.Size(328, 62);
+			this.LeaveTimePicker.Size = new System.Drawing.Size(292, 50);
 			this.LeaveTimePicker.TabIndex = 149;
 			this.LeaveTimePicker.Value = new System.DateTime(2023, 11, 3, 0, 0, 0, 0);
 			this.LeaveTimePicker.onValueChanged += new System.EventHandler(this.LeaveTimePicker_onValueChanged);
@@ -543,9 +543,9 @@
 			this.bunifuCustomLabel12.AutoSize = true;
 			this.bunifuCustomLabel12.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.White;
-			this.bunifuCustomLabel12.Location = new System.Drawing.Point(680, 825);
+			this.bunifuCustomLabel12.Location = new System.Drawing.Point(604, 660);
 			this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-			this.bunifuCustomLabel12.Size = new System.Drawing.Size(140, 23);
+			this.bunifuCustomLabel12.Size = new System.Drawing.Size(123, 21);
 			this.bunifuCustomLabel12.TabIndex = 151;
 			this.bunifuCustomLabel12.Text = "Total Money :";
 			// 
@@ -554,9 +554,9 @@
 			this.Totallabel.AutoSize = true;
 			this.Totallabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Totallabel.ForeColor = System.Drawing.Color.White;
-			this.Totallabel.Location = new System.Drawing.Point(858, 815);
+			this.Totallabel.Location = new System.Drawing.Point(763, 652);
 			this.Totallabel.Name = "Totallabel";
-			this.Totallabel.Size = new System.Drawing.Size(0, 23);
+			this.Totallabel.Size = new System.Drawing.Size(0, 21);
 			this.Totallabel.TabIndex = 152;
 			// 
 			// ExportDataBtn
@@ -573,11 +573,11 @@
 			this.ExportDataBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.ExportDataBtn.IconSize = 28;
 			this.ExportDataBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.ExportDataBtn.Location = new System.Drawing.Point(984, 945);
-			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ExportDataBtn.Location = new System.Drawing.Point(875, 756);
+			this.ExportDataBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.ExportDataBtn.Name = "ExportDataBtn";
-			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(9, 2, 9, 2);
-			this.ExportDataBtn.Size = new System.Drawing.Size(248, 63);
+			this.ExportDataBtn.Padding = new System.Windows.Forms.Padding(8, 2, 8, 2);
+			this.ExportDataBtn.Size = new System.Drawing.Size(220, 50);
 			this.ExportDataBtn.TabIndex = 154;
 			this.ExportDataBtn.Text = "Export Data";
 			this.ExportDataBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -595,10 +595,10 @@
 			this.closeReservationFormBtn.IconColor = System.Drawing.Color.White;
 			this.closeReservationFormBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.closeReservationFormBtn.IconSize = 32;
-			this.closeReservationFormBtn.Location = new System.Drawing.Point(1862, 1);
+			this.closeReservationFormBtn.Location = new System.Drawing.Point(1655, 1);
 			this.closeReservationFormBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.closeReservationFormBtn.Name = "closeReservationFormBtn";
-			this.closeReservationFormBtn.Size = new System.Drawing.Size(63, 58);
+			this.closeReservationFormBtn.Size = new System.Drawing.Size(56, 46);
 			this.closeReservationFormBtn.TabIndex = 58;
 			this.closeReservationFormBtn.UseVisualStyleBackColor = false;
 			this.closeReservationFormBtn.Click += new System.EventHandler(this.closeReservationFormBtn_Click);
@@ -615,20 +615,20 @@
 			this.PhoneNumberTextBox.LineIdleColor = System.Drawing.Color.Gray;
 			this.PhoneNumberTextBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(141)))));
 			this.PhoneNumberTextBox.LineThickness = 4;
-			this.PhoneNumberTextBox.Location = new System.Drawing.Point(244, 681);
-			this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(6);
+			this.PhoneNumberTextBox.Location = new System.Drawing.Point(217, 545);
+			this.PhoneNumberTextBox.Margin = new System.Windows.Forms.Padding(5);
 			this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-			this.PhoneNumberTextBox.Size = new System.Drawing.Size(306, 65);
+			this.PhoneNumberTextBox.Size = new System.Drawing.Size(272, 52);
 			this.PhoneNumberTextBox.TabIndex = 156;
 			this.PhoneNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.PhoneNumberTextBox.OnValueChanged += new System.EventHandler(this.PhoneNumberTextBox_OnValueChanged);
 			// 
 			// ReservationForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(60)))));
-			this.ClientSize = new System.Drawing.Size(1925, 1106);
+			this.ClientSize = new System.Drawing.Size(1711, 885);
 			this.Controls.Add(this.PhoneNumberTextBox);
 			this.Controls.Add(this.ExportDataBtn);
 			this.Controls.Add(this.Totallabel);
@@ -665,6 +665,7 @@
 			this.Controls.Add(this.guestLabel);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.closeReservationFormBtn);
+			this.ForeColor = System.Drawing.Color.Black;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "ReservationForm";

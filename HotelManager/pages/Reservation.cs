@@ -64,7 +64,6 @@ namespace HotelManager.pages
             ReservationForm a = new ReservationForm(reservationDataGridView.CurrentRow.Cells[0].Value.ToString());
             a.FormClosed += restartDataGridView;
             a.ShowDialog();
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

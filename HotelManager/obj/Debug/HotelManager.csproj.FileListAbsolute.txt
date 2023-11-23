@@ -307,3 +307,5 @@ C:\Users\LENOVO\OneDrive\Desktop\Btl-lttq\HotelManager\obj\Debug\à.exe
 C:\Users\LENOVO\OneDrive\Desktop\Btl-lttq\HotelManager\obj\Debug\à.pdb
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\EPPlus.Core.dll
 C:\Users\Admin\Downloads\workspace\ky-5\laptrinhtrucquan\vu\HotelManager\bin\Debug\EPPlus.Core.xml
+C:\Users\LENOVO\OneDrive\Desktop\Btl-lttq\HotelManager\bin\Debug\EPPlus.Core.dll
+C:\Users\LENOVO\OneDrive\Desktop\Btl-lttq\HotelManager\bin\Debug\EPPlus.Core.xml

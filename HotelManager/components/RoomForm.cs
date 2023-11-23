@@ -38,7 +38,8 @@ namespace HotelManager.components
 
             if (currentState == "UPDATE")
             {
-                roomFormButton.Text = "Update";
+                roomNumberTextBox.Enabled = false;
+				roomFormButton.Text = "Update";
                 roomNumberTextBox.Text = roomNumber;
                 roomTypeDropdown.selectedIndex = roomType;
                 roomStatusDropDown.selectedIndex = roomStatus;
@@ -60,7 +61,8 @@ namespace HotelManager.components
             try
             {
                 db.MutateData("DELETE PHONG WHERE SOPHONG = '" + Rooms.rNum + "'");
-                CustomMessageBox c = new CustomMessageBox("Xác nhận", "Xoá phòng thành công");
+                CustomMessageBox c = new CustomMessageBox("Xác nhận", $"Xoá phòng {Rooms.rNum} thành công");
+                c.ShowDialog();
             }
             catch (Exception ex) {
                 CustomMessageBox c = new CustomMessageBox("Xác nhận", $"Phòng {Rooms.rNum} hiện đang có khách thuê. Không thể xoá");

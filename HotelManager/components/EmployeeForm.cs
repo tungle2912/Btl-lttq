@@ -156,15 +156,16 @@ namespace HotelManager.components
 		private void bunifuThinButton21_Click(object sender, EventArgs e)
 		{		
 			// Thiết lập bộ lọc file
-			f.Filter = "Ảnh (*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
-            f.FilterIndex = 1;
+			f.Filter = "JPEG |*.jpg| PNG |*.png|All file |*.*";
+
+			f.FilterIndex = 1;
 			// Hiển thị hộp thoại trọn file
 			if (f.ShowDialog() == DialogResult.OK)
 			{
 				// Tải ảnh về bộ nhớ
 				Image image = Image.FromFile(f.FileName);
 				// Lưu ảnh vào thư mục image của project
-				 fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
+				fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg";
                 image.Save(Application.StartupPath + "\\image\\" + fileName);
 				pictureBox1.Image = Image.FromFile(f.FileName);
 			}

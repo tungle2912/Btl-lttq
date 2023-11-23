@@ -222,6 +222,7 @@
 			this.SettingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.SettingButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.SettingButton.UseVisualStyleBackColor = true;
+			this.SettingButton.Visible = false;
 			this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
 			// 
 			// ReservationButton
@@ -351,7 +352,7 @@
 			this.panelDestopApp.Controls.Add(this.pictureBox1);
 			this.panelDestopApp.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDestopApp.Location = new System.Drawing.Point(267, 62);
-			this.panelDestopApp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panelDestopApp.Margin = new System.Windows.Forms.Padding(4);
 			this.panelDestopApp.Name = "panelDestopApp";
 			this.panelDestopApp.Size = new System.Drawing.Size(1152, 708);
 			this.panelDestopApp.TabIndex = 2;
